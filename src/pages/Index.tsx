@@ -4,7 +4,6 @@ import { ArrowRight, User, Code, FolderOpen } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import SocialSidebar from "@/components/SocialSidebar";
 import ParticlesBackground from "@/components/ParticlesBackground";
-import developerAvatar from "@/assets/developer-avatar.png";
 
 const Index = () => {
   const containerVariants = {
@@ -48,9 +47,9 @@ const Index = () => {
             variants={itemVariants}
             className="premium-card glow-effect p-8 md:p-12"
           >
-            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <div className="flex flex-col items-center md:items-start gap-8">
               {/* Text Content */}
-              <div className="flex-1 text-center md:text-left space-y-6">
+              <div className="text-center md:text-left space-y-6">
                 <motion.p
                   variants={itemVariants}
                   className="text-primary text-sm font-medium tracking-widest uppercase"
@@ -116,29 +115,6 @@ const Index = () => {
                   </Link>
                 </motion.div>
               </div>
-
-              {/* Avatar */}
-              <motion.div
-                variants={itemVariants}
-                className="flex-shrink-0"
-              >
-                <motion.div
-                  className="relative w-48 h-48 md:w-64 md:h-64"
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                >
-                  <div className="absolute inset-0 rounded-full bg-primary/20 blur-2xl animate-pulse-slow" />
-                  <img
-                    src={developerAvatar}
-                    alt="Developer Avatar"
-                    className="relative w-full h-full object-contain rounded-full border-2 border-border/50"
-                  />
-                </motion.div>
-              </motion.div>
             </div>
           </motion.div>
 
