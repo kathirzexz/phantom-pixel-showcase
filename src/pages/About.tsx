@@ -43,10 +43,7 @@ const About = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                Hello! I'm Alex Chen, a full-stack developer with a passion for creating 
-                beautiful, functional, and user-centered digital experiences. With over 
-                5 years of experience in the field, I've had the privilege of working 
-                with startups, agencies, and established companies.
+                Hello! I'm Kathirvel, an ECE undergraduate with hands-on experience in designing and developing intelligent embedded systems powered by automation, IoT, and AI-driven logic. I work at the intersection of electronics, firmware programming, and artificial intelligence to build smart, efficient, and connected solutions.
               </motion.p>
 
               <motion.p
@@ -54,10 +51,7 @@ const About = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
               >
-                My journey into development started with a curiosity about how websites 
-                work. What began as tinkering with HTML and CSS has evolved into a deep 
-                expertise in modern web technologies, including React, TypeScript, Node.js, 
-                and cloud services.
+                My technical interests include embedded AI, sensor data processing, real-time decision-making, and intelligent automation systems. I integrate machine learning models with microcontrollers and edge devices to enable predictive behavior, anomaly detection, and smart control in embedded environments.
               </motion.p>
 
               <motion.p
@@ -65,10 +59,7 @@ const About = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 }}
               >
-                I believe in writing clean, maintainable code and creating interfaces that 
-                are not only visually appealing but also accessible and performant. Every 
-                project I undertake is an opportunity to push boundaries and deliver 
-                exceptional results.
+                I have experience working with microcontrollers, communication protocols, and IoT platforms, along with applying AI techniques such as data analysis, model inference, and logic optimization to enhance system intelligence and performance.
               </motion.p>
 
               <motion.p
@@ -76,10 +67,15 @@ const About = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 }}
               >
-                When I'm not coding, you can find me exploring new technologies, 
-                contributing to open-source projects, or enjoying a good book with 
-                a cup of coffee. I'm always open to discussing new projects and 
-                opportunities to collaborate.
+                I focus on creating reliable firmware, optimized hardware-software integration, and scalable intelligent systems. Whether it's building AI-powered IoT applications or automated embedded solutions, I enjoy turning complex problems into practical, real-world technology.
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.9 }}
+              >
+                I'm continuously learning and experimenting with emerging technologies in AI, embedded systems, and automation, and I'm always open to collaborating on innovative projects.
               </motion.p>
 
               <motion.div
