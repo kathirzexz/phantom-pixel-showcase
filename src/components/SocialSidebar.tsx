@@ -1,26 +1,26 @@
 import { motion } from "framer-motion";
-import { Linkedin, Github, Instagram, Facebook } from "lucide-react";
+import { Linkedin, Github, Instagram, Mail } from "lucide-react";
 
 const socialLinks = [
   {
     name: "LinkedIn",
     icon: Linkedin,
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/kathirvel03",
   },
   {
     name: "GitHub",
     icon: Github,
-    href: "https://github.com",
+    href: "https://github.com/kathirzexz",
   },
   {
     name: "Instagram",
     icon: Instagram,
-    href: "https://instagram.com",
+    href: "https://instagram.com/x_kathireh",
   },
   {
-    name: "Facebook",
-    icon: Facebook,
-    href: "https://facebook.com",
+    name: "Email",
+    icon: Mail,
+    href: "mailto:kathirzexz@gmail.com",
   },
 ];
 
