@@ -69,8 +69,8 @@ const Index = () => {
                   variants={itemVariants}
                   className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-lg"
                 >
-                  A passionate full-stack developer crafting elegant digital experiences 
-                  with modern technologies and clean code.
+                  I design and develop intelligent embedded systems by combining electronics 
+                  & firmware programming | Automation, IoT, and AI-driven logic.
                 </motion.p>
 
                 {/* Navigation Links */}
