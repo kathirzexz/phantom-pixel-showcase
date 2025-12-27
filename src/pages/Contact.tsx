@@ -3,7 +3,7 @@ import Navigation from "@/components/Navigation";
 import SocialSidebar from "@/components/SocialSidebar";
 import ParticlesBackground from "@/components/ParticlesBackground";
 import ContactForm from "@/components/ContactForm";
-import { Mail, MapPin, Clock } from "lucide-react";
+import { Mail, Clock } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -64,17 +64,12 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Email</p>
-                      <p className="text-foreground">alex@example.com</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <MapPin className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground">Location</p>
-                      <p className="text-foreground">San Francisco, CA</p>
+                      <a 
+                        href="mailto:kathirzex@gmail.com" 
+                        className="text-foreground hover:text-primary transition-colors"
+                      >
+                        kathirzex@gmail.com
+                      </a>
                     </div>
                   </div>
 
