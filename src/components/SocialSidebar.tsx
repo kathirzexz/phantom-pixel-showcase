@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Linkedin, Github, Instagram } from "lucide-react";
+import { Linkedin, Github, Instagram, Facebook } from "lucide-react";
 
 const socialLinks = [
   {
@@ -16,6 +16,11 @@ const socialLinks = [
     name: "Instagram",
     icon: Instagram,
     href: "https://instagram.com",
+  },
+  {
+    name: "Facebook",
+    icon: Facebook,
+    href: "https://facebook.com",
   },
 ];
 
