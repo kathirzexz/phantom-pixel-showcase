@@ -62,7 +62,7 @@ const Index = () => {
                   className="text-4xl md:text-5xl lg:text-6xl font-display font-light text-foreground leading-tight"
                 >
                   Hi, I'm{" "}
-                  <span className="text-gradient font-medium">Alex Chen</span>
+                  <span className="text-gradient font-medium">Kathirvel J</span>
                 </motion.h1>
 
                 <motion.p
