@@ -90,19 +90,19 @@ const About = () => {
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-primary" />
-                    <span>Based in San Francisco, CA</span>
+                    <span>ECE Undergraduate</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-primary" />
-                    <span>5+ years of experience</span>
+                    <span>Embedded Systems & IoT</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-primary" />
-                    <span>50+ projects completed</span>
+                    <span>AI & Automation Enthusiast</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-primary" />
-                    <span>Open to remote work</span>
+                    <span>Based in India</span>
                   </li>
                 </ul>
               </motion.div>
