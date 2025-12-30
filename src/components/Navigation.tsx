@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowLeft, Download, Mail } from "lucide-react";
+import { ArrowLeft, Mail } from "lucide-react";
 
 interface NavigationProps {
   showBack?: boolean;
@@ -10,13 +10,7 @@ const Navigation = ({ showBack = false }: NavigationProps) => {
   const location = useLocation();
   const isHome = location.pathname === "/";
 
-  const handleResumeDownload = () => {
-    // Create a placeholder PDF download
-    const link = document.createElement("a");
-    link.href = "/resume.pdf";
-    link.download = "resume.pdf";
-    link.click();
-  };
+  const resumeLink = "https://drive.google.com/file/d/1cNPUzEogTaIliX6rl9Qs0NJ25tMUz0DL/view";
 
   return (
     <motion.header
@@ -52,15 +46,16 @@ const Navigation = ({ showBack = false }: NavigationProps) => {
 
         {/* Right Side Actions */}
         <div className="flex-1 flex items-center justify-end gap-3">
-          <motion.button
-            onClick={handleResumeDownload}
-            className="nav-button hidden sm:flex items-center gap-2"
+          <motion.a
+            href={resumeLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-button hidden sm:flex items-center cursor-pointer"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <Download className="w-4 h-4" />
-            <span>Resume</span>
-          </motion.button>
+            Resume
+          </motion.a>
           
           <Link to="/contact">
             <motion.button
