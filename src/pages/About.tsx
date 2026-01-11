@@ -2,14 +2,11 @@ import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import SocialSidebar from "@/components/SocialSidebar";
 import ParticlesBackground from "@/components/ParticlesBackground";
-import { useTheme } from "@/hooks/useTheme";
 
 const About = () => {
-  const theme = useTheme();
-
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
-      <ParticlesBackground variant={theme} />
+      <ParticlesBackground variant="dark" />
       <Navigation showBack />
       <SocialSidebar />
 

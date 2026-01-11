@@ -49,14 +49,13 @@ const ParticlesBackground = ({ variant = "dark" }: ParticlesBackgroundProps) => 
     },
     particles: {
       color: {
-        // Galaxy cyan for dark, ocean blue for light
-        value: isDark ? "#5eead4" : "#2e8bc0",
+        value: isDark ? "#3b82f6" : "#1e40af",
       },
       links: {
-        color: isDark ? "#5eead4" : "#2e8bc0",
+        color: isDark ? "#3b82f6" : "#1e40af",
         distance: 150,
         enable: true,
-        opacity: isDark ? 0.12 : 0.15,
+        opacity: isDark ? 0.15 : 0.2,
         width: 1,
       },
       move: {
@@ -66,7 +65,7 @@ const ParticlesBackground = ({ variant = "dark" }: ParticlesBackgroundProps) => 
           default: "bounce",
         },
         random: false,
-        speed: 0.6,
+        speed: 0.8,
         straight: false,
       },
       number: {
@@ -75,16 +74,16 @@ const ParticlesBackground = ({ variant = "dark" }: ParticlesBackgroundProps) => 
           width: 1200,
           height: 800,
         },
-        value: isDark ? 100 : 60,
+        value: 80,
       },
       opacity: {
-        value: isDark ? 0.5 : 0.4,
+        value: isDark ? 0.4 : 0.5,
       },
       shape: {
         type: "circle",
       },
       size: {
-        value: { min: 1, max: isDark ? 3 : 2 },
+        value: { min: 1, max: 3 },
       },
     },
     detectRetina: true,

@@ -4,11 +4,8 @@ import { ArrowRight, User, Code, FolderOpen } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import SocialSidebar from "@/components/SocialSidebar";
 import ParticlesBackground from "@/components/ParticlesBackground";
-import { useTheme } from "@/hooks/useTheme";
 
 const Index = () => {
-  const theme = useTheme();
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -34,7 +31,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
-      <ParticlesBackground variant={theme} />
+      <ParticlesBackground variant="dark" />
       <Navigation />
       <SocialSidebar />
 
