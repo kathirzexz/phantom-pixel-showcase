@@ -4,11 +4,14 @@ import SocialSidebar from "@/components/SocialSidebar";
 import ParticlesBackground from "@/components/ParticlesBackground";
 import ContactForm from "@/components/ContactForm";
 import { Mail, Clock } from "lucide-react";
+import { useTheme } from "@/hooks/useTheme";
 
 const Contact = () => {
+  const theme = useTheme();
+
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
-      <ParticlesBackground variant="dark" />
+      <ParticlesBackground variant={theme} />
       <Navigation showBack />
       <SocialSidebar />
 

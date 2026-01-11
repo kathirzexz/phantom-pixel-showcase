@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation";
 import SocialSidebar from "@/components/SocialSidebar";
 import ParticlesBackground from "@/components/ParticlesBackground";
 import SkillCard from "@/components/SkillCard";
+import { useTheme } from "@/hooks/useTheme";
 
 const skillCategories = [
   {
@@ -39,9 +40,11 @@ const skillCategories = [
 ];
 
 const Skills = () => {
+  const theme = useTheme();
+
   return (
-    <div className="min-h-screen theme-light bg-background relative overflow-hidden">
-      <ParticlesBackground variant="light" />
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      <ParticlesBackground variant={theme} />
       <Navigation showBack />
       <SocialSidebar />
 

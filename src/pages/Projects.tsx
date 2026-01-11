@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import SocialSidebar from "@/components/SocialSidebar";
 import ParticlesBackground from "@/components/ParticlesBackground";
 import ProjectCard from "@/components/ProjectCard";
+import { useTheme } from "@/hooks/useTheme";
 
 const projects = [
   {
@@ -48,9 +49,11 @@ const projects = [
 ];
 
 const Projects = () => {
+  const theme = useTheme();
+
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
-      <ParticlesBackground variant="dark" />
+      <ParticlesBackground variant={theme} />
       <Navigation showBack />
       <SocialSidebar />
 
