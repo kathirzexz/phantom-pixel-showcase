@@ -6,87 +6,135 @@
 
 @layer base {
   :root {
-    /* Premium Dark Theme */
-    --background: 0 0% 4%;
-    --foreground: 0 0% 98%;
+    /* Dark Theme - Galaxy Style */
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 98%;
+    --card: 222 47% 13%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 222 47% 13%;
+    --popover-foreground: 210 40% 98%;
 
-    /* Premium Blue Accent */
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 100%;
+    /* Neon Cyan Accent */
+    --primary: 174 84% 64%;
+    --primary-foreground: 222 47% 11%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 222 47% 18%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 64%;
+    --muted: 222 47% 20%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 217 91% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 174 84% 64%;
+    --accent-foreground: 222 47% 11%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 14%;
-    --input: 0 0% 14%;
-    --ring: 217 91% 60%;
+    --border: 222 47% 20%;
+    --input: 222 47% 20%;
+    --ring: 174 84% 64%;
 
     --radius: 0.75rem;
 
     /* Custom Design Tokens */
-    --surface-dark: 0 0% 4%;
-    --surface-elevated: 0 0% 8%;
-    --surface-light: 0 0% 96%;
-    --text-primary: 0 0% 98%;
-    --text-secondary: 0 0% 64%;
-    --text-muted: 0 0% 45%;
-    --accent-blue: 217 91% 60%;
-    --accent-blue-glow: 217 91% 70%;
-    --accent-blue-dim: 217 60% 40%;
+    --surface-dark: 222 47% 11%;
+    --surface-elevated: 222 47% 15%;
+    --surface-light: 210 40% 96%;
+    --text-primary: 210 40% 98%;
+    --text-secondary: 215 20% 65%;
+    --text-muted: 215 20% 50%;
+    --accent-glow: 174 84% 64%;
+    --accent-dim: 174 60% 40%;
     
-    /* Gradients */
-    --gradient-dark: linear-gradient(180deg, hsl(0 0% 4%) 0%, hsl(0 0% 2%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 8%) 0%, hsl(0 0% 5%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(230 80% 50%) 100%);
-    --gradient-glow: radial-gradient(ellipse at center, hsl(217 91% 60% / 0.15) 0%, transparent 70%);
+    /* Galaxy Gradients */
+    --gradient-dark: linear-gradient(135deg, hsl(222 47% 11%) 0%, hsl(270 50% 15%) 50%, hsl(222 47% 11%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(222 47% 15% / 0.8) 0%, hsl(222 47% 10% / 0.8) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(174 84% 64%) 0%, hsl(200 80% 50%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(174 84% 64% / 0.15) 0%, transparent 70%);
     
     /* Shadows */
     --shadow-sm: 0 2px 8px hsl(0 0% 0% / 0.3);
     --shadow-md: 0 4px 16px hsl(0 0% 0% / 0.4);
     --shadow-lg: 0 8px 32px hsl(0 0% 0% / 0.5);
-    --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.3);
-    --shadow-card: 0 0 0 1px hsl(0 0% 20% / 0.5), 0 8px 40px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 40px hsl(174 84% 64% / 0.3);
+    --shadow-card: 0 0 0 1px hsl(222 47% 25% / 0.5), 0 8px 40px hsl(0 0% 0% / 0.4);
 
     /* Sidebar */
-    --sidebar-background: 0 0% 6%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 217 91% 60%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 12%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 0 0% 14%;
-    --sidebar-ring: 217 91% 60%;
+    --sidebar-background: 222 47% 13%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 174 84% 64%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 222 47% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 20%;
+    --sidebar-ring: 174 84% 64%;
   }
 
-  /* Light theme for Skills page */
-  .theme-light {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 8%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 8%;
-    --muted: 0 0% 92%;
+  /* Light Theme - Beach Style */
+  .light {
+    --background: 35 50% 96%;
+    --foreground: 0 0% 15%;
+
+    --card: 35 40% 99%;
+    --card-foreground: 0 0% 15%;
+
+    --popover: 35 40% 99%;
+    --popover-foreground: 0 0% 15%;
+
+    /* Ocean Blue Accent */
+    --primary: 199 68% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 35 30% 92%;
+    --secondary-foreground: 0 0% 15%;
+
+    --muted: 35 25% 90%;
     --muted-foreground: 0 0% 40%;
-    --border: 0 0% 88%;
-    --input: 0 0% 88%;
-    --surface-dark: 0 0% 98%;
-    --surface-elevated: 0 0% 100%;
-    --text-primary: 0 0% 8%;
+
+    --accent: 166 60% 80%;
+    --accent-foreground: 0 0% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 25% 88%;
+    --input: 35 25% 88%;
+    --ring: 199 68% 45%;
+
+    /* Custom Design Tokens */
+    --surface-dark: 35 50% 96%;
+    --surface-elevated: 35 40% 100%;
+    --surface-light: 35 50% 96%;
+    --text-primary: 0 0% 15%;
     --text-secondary: 0 0% 40%;
+    --text-muted: 0 0% 55%;
+    --accent-glow: 199 68% 45%;
+    --accent-dim: 199 50% 35%;
+    
+    /* Beach Gradients */
+    --gradient-dark: linear-gradient(135deg, hsl(35 50% 96%) 0%, hsl(40 60% 94%) 50%, hsl(45 70% 95%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(35 40% 100%) 0%, hsl(35 50% 98%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(199 68% 45%) 0%, hsl(166 60% 50%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(199 68% 45% / 0.1) 0%, transparent 70%);
+    
+    /* Light Shadows */
+    --shadow-sm: 0 2px 8px hsl(35 30% 70% / 0.2);
+    --shadow-md: 0 4px 16px hsl(35 30% 70% / 0.25);
+    --shadow-lg: 0 8px 32px hsl(35 30% 70% / 0.3);
+    --shadow-glow: 0 0 40px hsl(199 68% 45% / 0.2);
+    --shadow-card: 0 0 0 1px hsl(35 25% 85% / 0.5), 0 8px 40px hsl(35 30% 70% / 0.15);
+
+    /* Sidebar */
+    --sidebar-background: 35 40% 99%;
+    --sidebar-foreground: 0 0% 15%;
+    --sidebar-primary: 199 68% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 35 30% 92%;
+    --sidebar-accent-foreground: 0 0% 15%;
+    --sidebar-border: 35 25% 88%;
+    --sidebar-ring: 199 68% 45%;
   }
 }
 
@@ -97,6 +145,12 @@
 
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Smooth theme transition */
+  html,
+  html * {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease;
   }
 
   body {
@@ -217,6 +271,26 @@
   .particles-container {
     @apply fixed inset-0 pointer-events-none;
     z-index: 0;
+  }
+
+  /* Theme Toggle Button */
+  .theme-toggle-btn {
+    @apply bg-secondary/50 border border-border/50 backdrop-blur-sm;
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.1);
+  }
+
+  .theme-toggle-btn:hover {
+    @apply bg-secondary/80 border-primary/30;
+    box-shadow: 0 0 25px hsl(var(--primary) / 0.2);
+  }
+
+  .light .theme-toggle-btn {
+    @apply bg-card/80 border-border;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .light .theme-toggle-btn:hover {
+    box-shadow: var(--shadow-md);
   }
 }
 

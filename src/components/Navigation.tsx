@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, Mail } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 interface NavigationProps {
   showBack?: boolean;
@@ -46,6 +47,8 @@ const Navigation = ({ showBack = false }: NavigationProps) => {
 
         {/* Right Side Actions */}
         <div className="flex-1 flex items-center justify-end gap-3">
+          <ThemeToggle />
+          
           <motion.a
             href={resumeLink}
             target="_blank"
