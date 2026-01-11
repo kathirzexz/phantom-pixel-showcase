@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, Mail } from "lucide-react";
-import ThemeToggle from "./ThemeToggle";
 
 interface NavigationProps {
   showBack?: boolean;
@@ -18,21 +17,17 @@ const Navigation = ({ showBack = false }: NavigationProps) => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.2 }}
-      className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-4"
+      className="fixed top-0 left-0 right-0 z-50 px-6 py-4"
     >
       <nav className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Back Button - Left Side */}
-        <div className="flex-1 flex items-center gap-3">
+        <div className="flex-1">
           {!isHome && showBack && (
             <Link to="/" className="back-button">
               <ArrowLeft className="w-4 h-4" />
-              <span className="hidden sm:inline">Back</span>
+              <span>Back</span>
             </Link>
           )}
-          {/* Theme Toggle - Mobile: always visible on left */}
-          <div className="sm:hidden">
-            <ThemeToggle />
-          </div>
         </div>
 
         {/* Center - Can be used for logo */}
@@ -50,7 +45,7 @@ const Navigation = ({ showBack = false }: NavigationProps) => {
         </div>
 
         {/* Right Side Actions */}
-        <div className="flex-1 flex items-center justify-end gap-2 sm:gap-3">
+        <div className="flex-1 flex items-center justify-end gap-3">
           <motion.a
             href={resumeLink}
             target="_blank"
@@ -62,18 +57,13 @@ const Navigation = ({ showBack = false }: NavigationProps) => {
             Resume
           </motion.a>
           
-          {/* Theme Toggle - Desktop: to the left of Say Hi */}
-          <div className="hidden sm:block">
-            <ThemeToggle />
-          </div>
-          
           <Link to="/contact">
             <motion.button
-              className="nav-button-primary flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm"
+              className="nav-button-primary flex items-center gap-2"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <Mail className="w-4 h-4" />
               <span>Say Hi</span>
             </motion.button>
           </Link>
