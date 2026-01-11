@@ -7,27 +7,27 @@ interface ThemeContextType {
   toggleTheme: () => void;
 }
 
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+const ThemeContext = createContext<ThemeContextType | null>(null);
+
+const getInitialTheme = (): Theme => {
+  if (typeof window !== "undefined") {
+    const stored = localStorage.getItem("portfolio-theme");
+    if (stored === "light" || stored === "dark") {
+      return stored;
+    }
+  }
+  return "dark";
+};
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window !== "undefined") {
-      const stored = localStorage.getItem("portfolio-theme") as Theme;
-      return stored || "dark";
-    }
-    return "dark";
-  });
+  const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
   useEffect(() => {
     const root = document.documentElement;
     
-    if (theme === "light") {
-      root.classList.add("light-theme");
-      root.classList.remove("dark-theme");
-    } else {
-      root.classList.add("dark-theme");
-      root.classList.remove("light-theme");
-    }
+    // Remove both classes first, then add the correct one
+    root.classList.remove("light-theme", "dark-theme");
+    root.classList.add(theme === "light" ? "light-theme" : "dark-theme");
     
     localStorage.setItem("portfolio-theme", theme);
   }, [theme]);
@@ -43,9 +43,9 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export const useTheme = () => {
+export const useTheme = (): ThemeContextType => {
   const context = useContext(ThemeContext);
-  if (!context) {
+  if (context === null) {
     throw new Error("useTheme must be used within a ThemeProvider");
   }
   return context;
