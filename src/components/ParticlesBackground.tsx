@@ -2,13 +2,11 @@ import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import type { ISourceOptions } from "@tsparticles/engine";
+import { useTheme } from "@/contexts/ThemeContext";
 
-interface ParticlesBackgroundProps {
-  variant?: "dark" | "light";
-}
-
-const ParticlesBackground = ({ variant = "dark" }: ParticlesBackgroundProps) => {
+const ParticlesBackground = () => {
   const [init, setInit] = useState(false);
+  const { theme } = useTheme();
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -18,7 +16,7 @@ const ParticlesBackground = ({ variant = "dark" }: ParticlesBackgroundProps) => 
     });
   }, []);
 
-  const isDark = variant === "dark";
+  const isDark = theme === "dark";
 
   const options: ISourceOptions = useMemo(() => ({
     fullScreen: false,
@@ -49,10 +47,10 @@ const ParticlesBackground = ({ variant = "dark" }: ParticlesBackgroundProps) => 
     },
     particles: {
       color: {
-        value: isDark ? "#3b82f6" : "#1e40af",
+        value: isDark ? "#3b82f6" : "#7c3aed",
       },
       links: {
-        color: isDark ? "#3b82f6" : "#1e40af",
+        color: isDark ? "#3b82f6" : "#7c3aed",
         distance: 150,
         enable: true,
         opacity: isDark ? 0.15 : 0.2,
@@ -96,7 +94,7 @@ const ParticlesBackground = ({ variant = "dark" }: ParticlesBackgroundProps) => 
   return (
     <div className="particles-container">
       <Particles
-        id={`tsparticles-${variant}`}
+        id={`tsparticles-${theme}`}
         options={options}
         className="w-full h-full"
       />

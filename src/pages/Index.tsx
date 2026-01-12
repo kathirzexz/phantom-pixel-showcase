@@ -31,7 +31,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
-      <ParticlesBackground variant="dark" />
+      <ParticlesBackground />
       <Navigation />
       <SocialSidebar />
 
