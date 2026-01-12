@@ -50,7 +50,7 @@ const projects = [
 const Projects = () => {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
-      <ParticlesBackground variant="dark" />
+      <ParticlesBackground />
       <Navigation showBack />
       <SocialSidebar />
 

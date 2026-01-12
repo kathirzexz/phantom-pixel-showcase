@@ -40,8 +40,8 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <div className="min-h-screen theme-light bg-background relative overflow-hidden">
-      <ParticlesBackground variant="light" />
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      <ParticlesBackground />
       <Navigation showBack />
       <SocialSidebar />
 
