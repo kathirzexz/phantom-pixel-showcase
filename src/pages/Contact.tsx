@@ -8,7 +8,7 @@ import { Mail, Clock } from "lucide-react";
 const Contact = () => {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
-      <ParticlesBackground />
+      <ParticlesBackground variant="dark" />
       <Navigation showBack />
       <SocialSidebar />
 
