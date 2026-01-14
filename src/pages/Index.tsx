@@ -166,6 +166,46 @@ const Index = () => {
           </motion.div>
         </motion.div>
       </main>
+
+      {/* Features Section */}
+      <section id="features" className="relative z-10 min-h-screen flex items-center justify-center px-6 py-20">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="w-full max-w-4xl"
+        >
+          <div className="premium-card glow-effect p-8 md:p-12">
+            <h2 className="text-3xl md:text-4xl font-display font-light text-foreground mb-6">
+              <span className="text-gradient">Feats</span>
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Achievements and highlights coming soon...
+            </p>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="relative z-10 min-h-screen flex items-center justify-center px-6 py-20">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="w-full max-w-4xl"
+        >
+          <div className="premium-card glow-effect p-8 md:p-12">
+            <h2 className="text-3xl md:text-4xl font-display font-light text-foreground mb-6">
+              <span className="text-gradient">Experience</span>
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Work history and timeline coming soon...
+            </p>
+          </div>
+        </motion.div>
+      </section>
     </div>
   );
 };
