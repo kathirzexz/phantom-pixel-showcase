@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, User, Code, FolderOpen } from "lucide-react";
+import { ArrowRight, User, Code, FolderOpen, Star, Briefcase } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import SocialSidebar from "@/components/SocialSidebar";
 import ParticlesBackground from "@/components/ParticlesBackground";
@@ -73,7 +73,7 @@ const Index = () => {
                   & firmware programming | Automation, IoT, and AI-driven logic.
                 </motion.p>
 
-                {/* Navigation Links */}
+                {/* Navigation Links - First Row */}
                 <motion.div
                   variants={itemVariants}
                   className="flex flex-wrap gap-4 justify-center md:justify-start pt-4"
@@ -113,6 +113,34 @@ const Index = () => {
                       <ArrowRight className="w-4 h-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     </motion.button>
                   </Link>
+                </motion.div>
+
+                {/* Navigation Links - Second Row */}
+                <motion.div
+                  variants={itemVariants}
+                  className="flex flex-wrap gap-4 justify-center md:justify-start pt-2"
+                >
+                  <motion.button
+                    className="nav-button flex items-center gap-2 group"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
+                    <Star className="w-4 h-4" />
+                    <span>Feats</span>
+                    <ArrowRight className="w-4 h-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
+                  </motion.button>
+
+                  <motion.button
+                    className="nav-button flex items-center gap-2 group"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
+                    <Briefcase className="w-4 h-4" />
+                    <span>Experience</span>
+                    <ArrowRight className="w-4 h-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
+                  </motion.button>
                 </motion.div>
               </div>
             </div>
