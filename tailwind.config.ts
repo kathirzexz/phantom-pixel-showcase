@@ -73,8 +73,8 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       boxShadow: {
-        glow: "0 0 40px hsl(217 91% 60% / 0.3)",
-        "glow-lg": "0 0 60px hsl(217 91% 60% / 0.4)",
+        glow: "0 0 40px hsl(187 100% 50% / 0.3)",
+        "glow-lg": "0 0 60px hsl(187 100% 50% / 0.4)",
       },
       keyframes: {
         "accordion-down": {
@@ -106,8 +106,8 @@ export default {
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(var(--primary) / 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsl(var(--primary) / 0.5)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsl(187 100% 50% / 0.3)" },
+          "50%": { boxShadow: "0 0 40px hsl(187 100% 50% / 0.5)" },
         },
         float: {
           "0%, 100%": { transform: "translateY(0)" },
