@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, User, Code, FolderOpen, Star, Briefcase } from "lucide-react";
+import { ArrowRight, User, Code, FolderOpen } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import SocialSidebar from "@/components/SocialSidebar";
 import ParticlesBackground from "@/components/ParticlesBackground";
@@ -73,7 +73,7 @@ const Index = () => {
                   & firmware programming | Automation, IoT, and AI-driven logic.
                 </motion.p>
 
-                {/* Navigation Links - First Row */}
+                {/* Navigation Links */}
                 <motion.div
                   variants={itemVariants}
                   className="flex flex-wrap gap-4 justify-center md:justify-start pt-4"
@@ -114,34 +114,6 @@ const Index = () => {
                     </motion.button>
                   </Link>
                 </motion.div>
-
-                {/* Navigation Links - Second Row */}
-                <motion.div
-                  variants={itemVariants}
-                  className="flex flex-wrap gap-4 justify-center md:justify-start pt-2"
-                >
-                  <motion.button
-                    className="nav-button flex items-center gap-2 group"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
-                  >
-                    <Star className="w-4 h-4" />
-                    <span>Feats</span>
-                    <ArrowRight className="w-4 h-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
-                  </motion.button>
-
-                  <motion.button
-                    className="nav-button flex items-center gap-2 group"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })}
-                  >
-                    <Briefcase className="w-4 h-4" />
-                    <span>Experience</span>
-                    <ArrowRight className="w-4 h-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
-                  </motion.button>
-                </motion.div>
               </div>
             </div>
           </motion.div>
@@ -166,46 +138,6 @@ const Index = () => {
           </motion.div>
         </motion.div>
       </main>
-
-      {/* Features Section */}
-      <section id="features" className="relative z-10 min-h-screen flex items-center justify-center px-6 py-20">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="w-full max-w-4xl"
-        >
-          <div className="premium-card glow-effect p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-display font-light text-foreground mb-6">
-              <span className="text-gradient">Feats</span>
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Achievements and highlights coming soon...
-            </p>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Experience Section */}
-      <section id="experience" className="relative z-10 min-h-screen flex items-center justify-center px-6 py-20">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="w-full max-w-4xl"
-        >
-          <div className="premium-card glow-effect p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-display font-light text-foreground mb-6">
-              <span className="text-gradient">Experience</span>
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Work history and timeline coming soon...
-            </p>
-          </div>
-        </motion.div>
-      </section>
     </div>
   );
 };
