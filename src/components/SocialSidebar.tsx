@@ -20,12 +20,12 @@ const socialLinks = [
   {
     name: "Twitter",
     icon: Twitter,
-    href: "https://twitter.com/kathirzexz",
+    href: "https://x.com/KathirZexz",
   },
   {
     name: "Facebook",
     icon: Facebook,
-    href: "https://facebook.com/kathirzexz",
+    href: "https://www.facebook.com/kathir.j.3110",
   },
 ];
 
