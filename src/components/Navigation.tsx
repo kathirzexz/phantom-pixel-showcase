@@ -11,7 +11,7 @@ const Navigation = ({ showBack = false }: NavigationProps) => {
   const location = useLocation();
   const isHome = location.pathname === "/";
 
-  const resumeLink = "https://drive.google.com/file/d/1Vco7pnPRztBZi8vo6325_C1-QJizEJ3N/view";
+  const resumeLink = "https://drive.google.com/file/d/1-YNd1sWeJmQDbGMVD4fTz91e2iAMeLN4/view?usp=drivesdk";
 
   return (
     <motion.header
