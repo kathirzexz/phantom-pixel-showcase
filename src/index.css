@@ -245,26 +245,6 @@
     @apply hover:shadow-glow hover:scale-105;
   }
 
-  /* Hero Button - Glassmorphism with neon glow */
-  .hero-button {
-    @apply inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium tracking-wide uppercase;
-    @apply rounded-full border border-primary/30;
-    @apply bg-card/50 backdrop-blur-md;
-    @apply text-foreground;
-    @apply transition-all duration-300 ease-out;
-    @apply hover:border-primary/60 hover:text-primary;
-    box-shadow: 
-      0 0 0 1px hsl(var(--primary) / 0.1),
-      0 4px 20px hsl(var(--primary) / 0.05);
-  }
-
-  .hero-button:hover {
-    box-shadow: 
-      0 0 0 1px hsl(var(--primary) / 0.3),
-      0 0 20px hsl(var(--primary) / 0.2),
-      0 8px 30px hsl(var(--primary) / 0.15);
-  }
-
   /* Skill Card */
   .skill-card {
     @apply p-6 rounded-xl border border-border bg-card transition-all duration-300;
