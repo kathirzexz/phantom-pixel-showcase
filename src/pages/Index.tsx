@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, User, Code, FolderOpen } from "lucide-react";
+import { ArrowRight, User, Code, FolderOpen, Award, Briefcase } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import SocialSidebar from "@/components/SocialSidebar";
 import ParticlesBackground from "@/components/ParticlesBackground";
@@ -73,7 +73,7 @@ const Index = () => {
                   & firmware programming | Automation, IoT, and AI-driven logic.
                 </motion.p>
 
-                {/* Navigation Links */}
+                {/* Navigation Links - Row 1 */}
                 <motion.div
                   variants={itemVariants}
                   className="flex flex-wrap gap-4 justify-center md:justify-start pt-4"
@@ -110,6 +110,36 @@ const Index = () => {
                     >
                       <FolderOpen className="w-4 h-4" />
                       <span>Projects</span>
+                      <ArrowRight className="w-4 h-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
+                    </motion.button>
+                  </Link>
+                </motion.div>
+
+                {/* Navigation Links - Row 2 */}
+                <motion.div
+                  variants={itemVariants}
+                  className="flex flex-wrap gap-4 justify-center md:justify-start"
+                >
+                  <Link to="/feats">
+                    <motion.button
+                      className="nav-button flex items-center gap-2 group"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <Award className="w-4 h-4" />
+                      <span>Feats</span>
+                      <ArrowRight className="w-4 h-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
+                    </motion.button>
+                  </Link>
+
+                  <Link to="/experience">
+                    <motion.button
+                      className="nav-button flex items-center gap-2 group"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <Briefcase className="w-4 h-4" />
+                      <span>Experience</span>
                       <ArrowRight className="w-4 h-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     </motion.button>
                   </Link>
