@@ -151,15 +151,7 @@ const Index = () => {
                 variants={itemVariants}
                 className="flex-shrink-0 hidden md:block"
               >
-                <motion.div
-                  className="relative"
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                >
+                <div className="relative">
                   <div className="w-48 h-48 lg:w-56 lg:h-56 rounded-2xl overflow-hidden border border-primary/20 shadow-[0_0_20px_rgba(0,229,255,0.15)]">
                     <img
                       src={developerAvatar}
@@ -169,7 +161,7 @@ const Index = () => {
                   </div>
                   {/* Subtle glow ring */}
                   <div className="absolute inset-0 rounded-2xl border border-primary/10" />
-                </motion.div>
+                </div>
               </motion.div>
             </div>
           </motion.div>
