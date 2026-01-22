@@ -160,15 +160,15 @@ const Index = () => {
                     ease: "easeInOut",
                   }}
                 >
-                  <div className="w-48 h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border-2 border-primary/30 shadow-glow">
+                  <div className="w-48 h-48 lg:w-56 lg:h-56 rounded-2xl overflow-hidden border border-primary/20 shadow-[0_0_20px_rgba(0,229,255,0.15)]">
                     <img
                       src={developerAvatar}
                       alt="Kathirvel J"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  {/* Glow ring */}
-                  <div className="absolute inset-0 rounded-full border border-primary/20 animate-glow-pulse" />
+                  {/* Subtle glow ring */}
+                  <div className="absolute inset-0 rounded-2xl border border-primary/10" />
                 </motion.div>
               </motion.div>
             </div>
