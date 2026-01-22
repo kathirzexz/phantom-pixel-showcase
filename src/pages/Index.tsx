@@ -4,7 +4,7 @@ import { ArrowRight, User, Code, FolderOpen, Award, Briefcase } from "lucide-rea
 import Navigation from "@/components/Navigation";
 import SocialSidebar from "@/components/SocialSidebar";
 import ParticlesBackground from "@/components/ParticlesBackground";
-
+import developerAvatar from "@/assets/developer-avatar.png";
 const Index = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -47,7 +47,7 @@ const Index = () => {
             variants={itemVariants}
             className="premium-card glow-effect p-8 md:p-12"
           >
-            <div className="flex flex-col items-center md:items-start gap-8">
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
               {/* Text Content */}
               <div className="text-center md:text-left space-y-6">
                 <motion.p
@@ -145,6 +145,32 @@ const Index = () => {
                   </Link>
                 </motion.div>
               </div>
+
+              {/* Right-side Avatar Image */}
+              <motion.div
+                variants={itemVariants}
+                className="flex-shrink-0 hidden md:block"
+              >
+                <motion.div
+                  className="relative"
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  <div className="w-48 h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border-2 border-primary/30 shadow-glow">
+                    <img
+                      src={developerAvatar}
+                      alt="Kathirvel J"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  {/* Glow ring */}
+                  <div className="absolute inset-0 rounded-full border border-primary/20 animate-glow-pulse" />
+                </motion.div>
+              </motion.div>
             </div>
           </motion.div>
 
