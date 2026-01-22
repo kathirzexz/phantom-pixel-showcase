@@ -4,8 +4,6 @@ import { ArrowRight, User, Code, FolderOpen, Award, Briefcase } from "lucide-rea
 import Navigation from "@/components/Navigation";
 import SocialSidebar from "@/components/SocialSidebar";
 import ParticlesBackground from "@/components/ParticlesBackground";
-// Profile photo will be imported once the asset is available
-const profilePhoto = "/placeholder.svg";
 
 const Index = () => {
   const containerVariants = {
@@ -59,29 +57,13 @@ const Index = () => {
                   Welcome to my portfolio
                 </motion.p>
 
-                {/* Name with Profile Photo */}
-                <motion.div
+                <motion.h1
                   variants={itemVariants}
-                  className="flex flex-col md:flex-row items-center gap-4 md:gap-6"
+                  className="text-4xl md:text-5xl lg:text-6xl font-display font-light text-foreground leading-tight"
                 >
-                  {/* Profile Photo */}
-                  <motion.div
-                    className="w-[90px] h-[90px] rounded-[18px] overflow-hidden border-2 border-primary/60 shadow-[0_0_20px_rgba(0,229,255,0.3)] flex-shrink-0"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <img
-                      src={profilePhoto}
-                      alt="Kathirvel J"
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
-                  
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-light text-foreground leading-tight text-center md:text-left">
-                    Hi, I'm{" "}
-                    <span className="text-gradient font-medium">Kathirvel J</span>
-                  </h1>
-                </motion.div>
+                  Hi, I'm{" "}
+                  <span className="text-gradient font-medium">Kathirvel J</span>
+                </motion.h1>
 
                 <motion.p
                   variants={itemVariants}
