@@ -5,28 +5,28 @@ import ParticlesBackground from "@/components/ParticlesBackground";
 
 const feats = [
   {
-    name: "AWS Certified Solutions Architect",
-    subtitle: "Professional Certification",
-    tags: ["#AWS", "#CloudArchitecture", "#Infrastructure", "#DevOps"],
-    description: "4 months certification program",
-    bgColor: "from-orange-500/20 to-orange-600/30",
-    textColor: "text-orange-400",
+    name: "Mentee - Amazon ML Summer School",
+    bannerText: "Amazon ML Summer School",
+    tags: ["#ML", "#MachineLearning", "#DataScience", "#DataAnalysis"],
+    description: "4 weeks apprenticeship program",
+    bgColor: "bg-gradient-to-br from-teal-700 to-teal-900",
+    accentColor: "text-orange-400",
   },
   {
     name: "Google Cloud Professional Developer",
-    subtitle: "Professional Certification",
+    bannerText: "Google Cloud",
     tags: ["#GCP", "#CloudNative", "#Kubernetes", "#Serverless"],
     description: "Cloud development expertise certification",
-    bgColor: "from-blue-500/20 to-blue-600/30",
-    textColor: "text-blue-400",
+    bgColor: "bg-gradient-to-br from-blue-600 to-blue-800",
+    accentColor: "text-blue-400",
   },
   {
-    name: "Meta Frontend Developer",
-    subtitle: "Professional Certificate",
-    tags: ["#React", "#JavaScript", "#CSS", "#WebDev"],
-    description: "6 months professional training program",
-    bgColor: "from-cyan-500/20 to-cyan-600/30",
-    textColor: "text-cyan-400",
+    name: "AWS Certified Solutions Architect",
+    bannerText: "AWS Certified",
+    tags: ["#AWS", "#CloudArchitecture", "#Infrastructure", "#DevOps"],
+    description: "4 months certification program",
+    bgColor: "bg-gradient-to-br from-orange-600 to-orange-800",
+    accentColor: "text-orange-400",
   },
 ];
 
@@ -69,42 +69,47 @@ const Feats = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="w-full max-w-2xl mx-auto space-y-6"
+          className="w-full max-w-md mx-auto space-y-6"
         >
           {feats.map((feat, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="premium-card glow-effect overflow-hidden"
+              className="rounded-2xl overflow-hidden bg-card border border-border/30 shadow-lg"
             >
-              {/* Image/Banner Area */}
-              <div className={`h-32 md:h-40 bg-gradient-to-br ${feat.bgColor} flex items-center justify-center relative`}>
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_70%)]" />
-                <span className={`text-2xl md:text-3xl font-display font-bold ${feat.textColor} tracking-wide`}>
-                  {feat.name.split(' ')[0]}
-                </span>
+              {/* Banner Image Area */}
+              <div className={`h-28 md:h-36 ${feat.bgColor} flex items-center justify-center relative`}>
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.1),transparent_60%)]" />
+                <div className="text-center">
+                  <span className={`text-lg md:text-xl font-medium ${feat.accentColor}`}>
+                    {feat.bannerText.split(' ')[0]}
+                  </span>
+                  <span className="text-lg md:text-xl font-medium text-white ml-1">
+                    {feat.bannerText.split(' ').slice(1).join(' ')}
+                  </span>
+                </div>
               </div>
 
               {/* Content */}
-              <div className="p-6 md:p-8">
-                <h2 className="text-xl md:text-2xl font-display font-semibold text-foreground">
+              <div className="p-5 md:p-6 bg-card">
+                <h2 className="text-lg md:text-xl font-semibold text-foreground leading-tight">
                   {feat.name}
                 </h2>
 
                 {/* Divider */}
-                <div className="w-full h-px bg-gradient-to-r from-border via-border/50 to-transparent my-4" />
+                <div className="w-full h-px bg-border my-3" />
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-x-2 gap-y-1">
                   {feat.tags.map((tag, i) => (
-                    <span key={i} className="text-sm text-primary/80">
+                    <span key={i} className="text-sm text-muted-foreground">
                       {tag}
                     </span>
                   ))}
                 </div>
 
                 {/* Description */}
-                <p className="text-muted-foreground mt-4">
+                <p className="text-muted-foreground text-sm mt-3">
                   {feat.description}
                 </p>
               </div>
