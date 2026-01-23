@@ -2,25 +2,31 @@ import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import SocialSidebar from "@/components/SocialSidebar";
 import ParticlesBackground from "@/components/ParticlesBackground";
-import { Card, CardContent } from "@/components/ui/card";
-import { Award } from "lucide-react";
 
 const feats = [
   {
     name: "AWS Certified Solutions Architect",
-    title: "Professional Certification",
-    duration: "Issued Mar 2024",
-    location: "Amazon Web Services",
+    subtitle: "Professional Certification",
     tags: ["#AWS", "#CloudArchitecture", "#Infrastructure", "#DevOps"],
-    description: "Validated expertise in designing distributed systems and deploying scalable applications on AWS cloud infrastructure.",
+    description: "4 months certification program",
+    bgColor: "from-orange-500/20 to-orange-600/30",
+    textColor: "text-orange-400",
   },
   {
     name: "Google Cloud Professional Developer",
-    title: "Professional Certification",
-    duration: "Issued Nov 2023",
-    location: "Google Cloud Platform",
+    subtitle: "Professional Certification",
     tags: ["#GCP", "#CloudNative", "#Kubernetes", "#Serverless"],
-    description: "Demonstrated proficiency in building and deploying applications using Google Cloud services and best practices.",
+    description: "Cloud development expertise certification",
+    bgColor: "from-blue-500/20 to-blue-600/30",
+    textColor: "text-blue-400",
+  },
+  {
+    name: "Meta Frontend Developer",
+    subtitle: "Professional Certificate",
+    tags: ["#React", "#JavaScript", "#CSS", "#WebDev"],
+    description: "6 months professional training program",
+    bgColor: "from-cyan-500/20 to-cyan-600/30",
+    textColor: "text-cyan-400",
   },
 ];
 
@@ -51,52 +57,59 @@ const Feats = () => {
       <Navigation showBack />
       <SocialSidebar />
 
-      <main className="relative z-10 min-h-screen flex items-center justify-center px-6 pt-24 pb-12">
+      {/* Large Background Text */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+        <span className="text-[25vw] font-display font-bold text-foreground/[0.03] tracking-widest select-none">
+          FEATS
+        </span>
+      </div>
+
+      <main className="relative z-10 min-h-screen px-6 pt-24 pb-12">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="w-full max-w-4xl"
+          className="w-full max-w-2xl mx-auto space-y-6"
         >
-          <motion.div variants={itemVariants} className="premium-card glow-effect p-8 md:p-12">
-            <motion.h1
+          {feats.map((feat, index) => (
+            <motion.div
+              key={index}
               variants={itemVariants}
-              className="text-3xl md:text-4xl font-display font-light mb-8"
+              className="premium-card glow-effect overflow-hidden"
             >
-              My <span className="text-gradient font-medium">Feats</span>
-            </motion.h1>
+              {/* Image/Banner Area */}
+              <div className={`h-32 md:h-40 bg-gradient-to-br ${feat.bgColor} flex items-center justify-center relative`}>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_70%)]" />
+                <span className={`text-2xl md:text-3xl font-display font-bold ${feat.textColor} tracking-wide`}>
+                  {feat.name.split(' ')[0]}
+                </span>
+              </div>
 
-            <motion.div variants={itemVariants} className="space-y-4">
-              {feats.map((feat, index) => (
-                <motion.div key={index} variants={itemVariants}>
-                  <Card className="bg-card/50 border-border/50 backdrop-blur-sm hover:bg-card/70 transition-all duration-300">
-                    <CardContent className="p-5">
-                      <div className="flex items-start gap-4">
-                        <div className="p-2.5 rounded-lg bg-primary/10 text-primary shrink-0">
-                          <Award className="w-5 h-5" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <h3 className="font-medium text-foreground text-lg">{feat.name}</h3>
-                          <p className="text-muted-foreground text-sm">{feat.title}</p>
-                          <p className="text-muted-foreground/70 text-xs mt-1">
-                            {feat.duration} · {feat.location}
-                          </p>
-                          <div className="flex flex-wrap gap-1.5 mt-3">
-                            {feat.tags.map((tag, i) => (
-                              <span key={i} className="text-xs text-primary/80">{tag}</span>
-                            ))}
-                          </div>
-                          <p className="text-muted-foreground text-sm mt-3 leading-relaxed">
-                            {feat.description}
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
+              {/* Content */}
+              <div className="p-6 md:p-8">
+                <h2 className="text-xl md:text-2xl font-display font-semibold text-foreground">
+                  {feat.name}
+                </h2>
+
+                {/* Divider */}
+                <div className="w-full h-px bg-gradient-to-r from-border via-border/50 to-transparent my-4" />
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2">
+                  {feat.tags.map((tag, i) => (
+                    <span key={i} className="text-sm text-primary/80">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Description */}
+                <p className="text-muted-foreground mt-4">
+                  {feat.description}
+                </p>
+              </div>
             </motion.div>
-          </motion.div>
+          ))}
         </motion.div>
       </main>
     </div>

@@ -2,25 +2,38 @@ import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import SocialSidebar from "@/components/SocialSidebar";
 import ParticlesBackground from "@/components/ParticlesBackground";
-import { Card, CardContent } from "@/components/ui/card";
-import { Briefcase } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 const experiences = [
   {
     company: "Nexus Technologies",
     role: "Senior Software Engineer",
     duration: "Jan 2023 – Present",
-    location: "San Francisco, CA | Remote",
-    tags: ["#React", "#TypeScript", "#Node.js", "#PostgreSQL"],
-    description: "Leading frontend architecture for enterprise SaaS platform serving 50K+ daily active users.",
+    location: "San Francisco, CA",
+    mode: "Remote",
+    type: "FULL-TIME",
+    tags: ["React", "TypeScript", "Node.js", "PostgreSQL", "AWS", "Docker"],
+    expertise: "Frontend Architecture, System Design, Team Leadership, Agile Development.",
+    bullets: [
+      "Led frontend architecture for enterprise SaaS platform serving 50K+ daily active users",
+      "Mentored junior developers and conducted code reviews for 8-member team",
+      "Implemented CI/CD pipelines reducing deployment time by 60%",
+    ],
   },
   {
     company: "Quantum Labs",
     role: "Full Stack Developer",
     duration: "Jun 2021 – Dec 2022",
-    location: "Austin, TX | Hybrid",
-    tags: ["#Next.js", "#GraphQL", "#AWS", "#MongoDB"],
-    description: "Built and maintained microservices powering real-time analytics dashboard for fintech clients.",
+    location: "Austin, TX",
+    mode: "Hybrid",
+    type: "FULL-TIME",
+    tags: ["Next.js", "GraphQL", "AWS", "MongoDB", "Redis", "Kubernetes"],
+    expertise: "API Development, Microservices, Cloud Infrastructure, Real-time Systems.",
+    bullets: [
+      "Built and maintained microservices powering real-time analytics dashboard",
+      "Designed GraphQL APIs handling 10M+ requests daily",
+      "Optimized database queries reducing response time by 40%",
+    ],
   },
 ];
 
@@ -51,52 +64,77 @@ const Experience = () => {
       <Navigation showBack />
       <SocialSidebar />
 
-      <main className="relative z-10 min-h-screen flex items-center justify-center px-6 pt-24 pb-12">
+      {/* Large Background Text */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+        <span className="text-[20vw] font-display font-bold text-foreground/[0.03] tracking-widest select-none">
+          EXPERIENCE
+        </span>
+      </div>
+
+      <main className="relative z-10 min-h-screen px-6 pt-24 pb-12">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="w-full max-w-4xl"
+          className="w-full max-w-2xl mx-auto space-y-6"
         >
-          <motion.div variants={itemVariants} className="premium-card glow-effect p-8 md:p-12">
-            <motion.h1
+          {experiences.map((exp, index) => (
+            <motion.div
+              key={index}
               variants={itemVariants}
-              className="text-3xl md:text-4xl font-display font-light mb-8"
+              className="premium-card glow-effect p-6 md:p-8"
             >
-              My <span className="text-gradient font-medium">Experience</span>
-            </motion.h1>
+              {/* Company & Role */}
+              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground">
+                {exp.company}
+              </h2>
+              <p className="text-lg text-foreground/90 mt-1">{exp.role}</p>
+              
+              {/* Duration & Location */}
+              <p className="text-muted-foreground mt-2">{exp.duration}</p>
+              <p className="text-muted-foreground/70 italic text-sm">
+                {exp.location} · {exp.mode}
+              </p>
 
-            <motion.div variants={itemVariants} className="space-y-4">
-              {experiences.map((exp, index) => (
-                <motion.div key={index} variants={itemVariants}>
-                  <Card className="bg-card/50 border-border/50 backdrop-blur-sm hover:bg-card/70 transition-all duration-300">
-                    <CardContent className="p-5">
-                      <div className="flex items-start gap-4">
-                        <div className="p-2.5 rounded-lg bg-primary/10 text-primary shrink-0">
-                          <Briefcase className="w-5 h-5" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <h3 className="font-medium text-foreground text-lg">{exp.company}</h3>
-                          <p className="text-muted-foreground text-sm">{exp.role}</p>
-                          <p className="text-muted-foreground/70 text-xs mt-1">
-                            {exp.duration} · {exp.location}
-                          </p>
-                          <div className="flex flex-wrap gap-1.5 mt-3">
-                            {exp.tags.map((tag, i) => (
-                              <span key={i} className="text-xs text-primary/80">{tag}</span>
-                            ))}
-                          </div>
-                          <p className="text-muted-foreground text-sm mt-3 leading-relaxed">
-                            {exp.description}
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
+              {/* Type Badge */}
+              <Badge 
+                variant="outline" 
+                className="mt-4 border-primary/50 text-primary bg-primary/10 text-xs tracking-wider"
+              >
+                {exp.type}
+              </Badge>
+
+              {/* Tech Tags */}
+              <div className="flex flex-wrap gap-2 mt-5">
+                {exp.tags.map((tag, i) => (
+                  <span 
+                    key={i} 
+                    className="px-3 py-1.5 text-sm border border-border/50 rounded-full text-foreground/80 bg-card/30"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* Divider */}
+              <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent my-6" />
+
+              {/* Expertise */}
+              <p className="text-muted-foreground leading-relaxed">
+                {exp.expertise}
+              </p>
+
+              {/* Bullet Points */}
+              <ul className="mt-4 space-y-2">
+                {exp.bullets.map((bullet, i) => (
+                  <li key={i} className="flex items-start gap-3 text-muted-foreground">
+                    <span className="text-primary mt-1.5">▸</span>
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
-          </motion.div>
+          ))}
         </motion.div>
       </main>
     </div>
