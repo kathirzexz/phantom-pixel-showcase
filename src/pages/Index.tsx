@@ -166,24 +166,6 @@ const Index = () => {
             </div>
           </motion.div>
 
-          {/* Bottom subtle indicator */}
-          <motion.div
-            variants={itemVariants}
-            className="flex justify-center mt-12"
-          >
-            <motion.div
-              className="flex flex-col items-center gap-2 text-muted-foreground"
-              animate={{ y: [0, 8, 0] }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            >
-              <span className="text-xs tracking-widest uppercase">Scroll to explore</span>
-              <div className="w-px h-8 bg-gradient-to-b from-muted-foreground/50 to-transparent" />
-            </motion.div>
-          </motion.div>
         </motion.div>
       </main>
     </div>
