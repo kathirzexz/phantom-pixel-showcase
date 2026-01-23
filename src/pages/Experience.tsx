@@ -2,6 +2,27 @@ import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import SocialSidebar from "@/components/SocialSidebar";
 import ParticlesBackground from "@/components/ParticlesBackground";
+import { Card, CardContent } from "@/components/ui/card";
+import { Briefcase } from "lucide-react";
+
+const experiences = [
+  {
+    company: "Nexus Technologies",
+    role: "Senior Software Engineer",
+    duration: "Jan 2023 – Present",
+    location: "San Francisco, CA | Remote",
+    tags: ["#React", "#TypeScript", "#Node.js", "#PostgreSQL"],
+    description: "Leading frontend architecture for enterprise SaaS platform serving 50K+ daily active users.",
+  },
+  {
+    company: "Quantum Labs",
+    role: "Full Stack Developer",
+    duration: "Jun 2021 – Dec 2022",
+    location: "Austin, TX | Hybrid",
+    tags: ["#Next.js", "#GraphQL", "#AWS", "#MongoDB"],
+    description: "Built and maintained microservices powering real-time analytics dashboard for fintech clients.",
+  },
+];
 
 const Experience = () => {
   const containerVariants = {
@@ -9,7 +30,7 @@ const Experience = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.15,
         delayChildren: 0.2,
       },
     },
@@ -45,10 +66,35 @@ const Experience = () => {
               My <span className="text-gradient font-medium">Experience</span>
             </motion.h1>
 
-            <motion.div variants={itemVariants} className="space-y-6 text-muted-foreground">
-              <p className="text-lg leading-relaxed">
-                Professional experience and work history coming soon...
-              </p>
+            <motion.div variants={itemVariants} className="space-y-4">
+              {experiences.map((exp, index) => (
+                <motion.div key={index} variants={itemVariants}>
+                  <Card className="bg-card/50 border-border/50 backdrop-blur-sm hover:bg-card/70 transition-all duration-300">
+                    <CardContent className="p-5">
+                      <div className="flex items-start gap-4">
+                        <div className="p-2.5 rounded-lg bg-primary/10 text-primary shrink-0">
+                          <Briefcase className="w-5 h-5" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h3 className="font-medium text-foreground text-lg">{exp.company}</h3>
+                          <p className="text-muted-foreground text-sm">{exp.role}</p>
+                          <p className="text-muted-foreground/70 text-xs mt-1">
+                            {exp.duration} · {exp.location}
+                          </p>
+                          <div className="flex flex-wrap gap-1.5 mt-3">
+                            {exp.tags.map((tag, i) => (
+                              <span key={i} className="text-xs text-primary/80">{tag}</span>
+                            ))}
+                          </div>
+                          <p className="text-muted-foreground text-sm mt-3 leading-relaxed">
+                            {exp.description}
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
             </motion.div>
           </motion.div>
         </motion.div>
