@@ -6,27 +6,34 @@ import ParticlesBackground from "@/components/ParticlesBackground";
 const feats = [
   {
     name: "Mentee - Amazon ML Summer School",
-    bannerText: "Amazon ML Summer School",
+    bannerText: "Amazon ML",
+    bannerSubtext: "Summer School",
     tags: ["#ML", "#MachineLearning", "#DataScience", "#DataAnalysis"],
     description: "4 weeks apprenticeship program",
     bgColor: "bg-gradient-to-br from-teal-700 to-teal-900",
     accentColor: "text-orange-400",
+    isDark: true,
   },
   {
-    name: "Google Cloud Professional Developer",
-    bannerText: "Google Cloud",
-    tags: ["#GCP", "#CloudNative", "#Kubernetes", "#Serverless"],
-    description: "Cloud development expertise certification",
-    bgColor: "bg-gradient-to-br from-blue-600 to-blue-800",
-    accentColor: "text-blue-400",
+    name: "Zoho - Summer Intern",
+    bannerText: "ZOHO",
+    bannerSubtext: "CRM",
+    tags: ["#SQL", "#JDBC", "#JAVA", "#KAFKA"],
+    description: "Software Development Intern",
+    bgColor: "bg-white",
+    accentColor: "text-foreground",
+    isDark: false,
+    isColorful: true,
   },
   {
-    name: "AWS Certified Solutions Architect",
-    bannerText: "AWS Certified",
-    tags: ["#AWS", "#CloudArchitecture", "#Infrastructure", "#DevOps"],
-    description: "4 months certification program",
-    bgColor: "bg-gradient-to-br from-orange-600 to-orange-800",
-    accentColor: "text-orange-400",
+    name: "Bit Brothers - Junior Javascript",
+    bannerText: "BIT",
+    bannerSubtext: "BROTHERS",
+    tags: ["#JavaScript", "#React", "#NodeJS", "#MongoDB"],
+    description: "Junior Developer Program",
+    bgColor: "bg-white",
+    accentColor: "text-foreground",
+    isDark: false,
   },
 ];
 
@@ -64,7 +71,7 @@ const Feats = () => {
         </span>
       </div>
 
-      <main className="relative z-10 min-h-screen px-6 pt-24 pb-12">
+      <main className="relative z-10 min-h-screen px-4 md:px-6 pt-24 pb-12">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -75,18 +82,48 @@ const Feats = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="rounded-2xl overflow-hidden bg-card border border-border/30 shadow-lg"
+              className="rounded-2xl overflow-hidden bg-card/80 backdrop-blur-md border border-border/30 shadow-lg"
             >
               {/* Banner Image Area */}
-              <div className={`h-28 md:h-36 ${feat.bgColor} flex items-center justify-center relative`}>
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.1),transparent_60%)]" />
-                <div className="text-center">
-                  <span className={`text-lg md:text-xl font-medium ${feat.accentColor}`}>
-                    {feat.bannerText.split(' ')[0]}
+              <div className={`h-32 md:h-40 ${feat.bgColor} flex items-center justify-center relative overflow-hidden`}>
+                {feat.isDark && (
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.1),transparent_60%)]" />
+                )}
+                
+                {/* Banner decorative elements for light cards */}
+                {!feat.isDark && (
+                  <>
+                    <div className="absolute top-3 left-3 w-8 h-8 border-t-2 border-l-2 border-muted-foreground/20" />
+                    <div className="absolute bottom-3 right-3 w-8 h-8 border-b-2 border-r-2 border-muted-foreground/20" />
+                  </>
+                )}
+                
+                <div className="text-center z-10">
+                  {feat.isColorful ? (
+                    <div className="flex items-center justify-center gap-0.5">
+                      <span className="text-2xl md:text-3xl font-bold text-blue-500">Z</span>
+                      <span className="text-2xl md:text-3xl font-bold text-red-500">O</span>
+                      <span className="text-2xl md:text-3xl font-bold text-yellow-500">H</span>
+                      <span className="text-2xl md:text-3xl font-bold text-green-500">O</span>
+                    </div>
+                  ) : (
+                    <span className={`text-xl md:text-2xl font-bold ${feat.isDark ? feat.accentColor : 'text-gray-800'}`}>
+                      {feat.bannerText}
+                    </span>
+                  )}
+                  <span className={`block text-lg md:text-xl font-medium ${feat.isDark ? 'text-white' : 'text-gray-700'} mt-0.5`}>
+                    {feat.bannerSubtext}
                   </span>
-                  <span className="text-lg md:text-xl font-medium text-white ml-1">
-                    {feat.bannerText.split(' ').slice(1).join(' ')}
-                  </span>
+                  
+                  {/* Amazon smile for ML School */}
+                  {feat.name.includes("Amazon") && (
+                    <div className="mt-1">
+                      <svg className="w-8 h-4 mx-auto text-orange-400" viewBox="0 0 32 16" fill="currentColor">
+                        <path d="M2 8 Q16 16 30 8" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                        <circle cx="30" cy="8" r="2" fill="currentColor"/>
+                      </svg>
+                    </div>
+                  )}
                 </div>
               </div>
 

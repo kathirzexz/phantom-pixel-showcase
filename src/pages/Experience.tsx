@@ -2,9 +2,22 @@ import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import SocialSidebar from "@/components/SocialSidebar";
 import ParticlesBackground from "@/components/ParticlesBackground";
-import { Badge } from "@/components/ui/badge";
 
 const experiences = [
+  {
+    company: "Zoho Corporation",
+    role: "Project Trainee",
+    duration: "Jul 2022 - Jun 2023",
+    location: "Chennai, Tamil Nadu, India",
+    mode: "On-site",
+    type: "INTERNSHIP",
+    tags: ["GraphQL", "Java", "Spring Boot", "MySQL", "Redis", "JavaScript", "REST APIs"],
+    expertise: "GraphQL Expert, Service Orientated Architecture, ORM, Serverless, Cloud Infrastructure.",
+    bullets: [
+      "Developed GraphQL APIs and REST services",
+      "Worked with Redis, MySQL, Java, JavaScript, Handlebars, Highcharts",
+    ],
+  },
   {
     company: "Nexus Technologies",
     role: "Senior Software Engineer",
@@ -18,21 +31,6 @@ const experiences = [
       "Led frontend architecture for enterprise SaaS platform serving 50K+ daily active users",
       "Mentored junior developers and conducted code reviews for 8-member team",
       "Implemented CI/CD pipelines reducing deployment time by 60%",
-    ],
-  },
-  {
-    company: "Quantum Labs",
-    role: "Full Stack Developer",
-    duration: "Jun 2021 – Dec 2022",
-    location: "Austin, TX",
-    mode: "Hybrid",
-    type: "FULL-TIME",
-    tags: ["Next.js", "GraphQL", "AWS", "MongoDB", "Redis", "Kubernetes"],
-    expertise: "API Development, Microservices, Cloud Infrastructure, Real-time Systems.",
-    bullets: [
-      "Built and maintained microservices powering real-time analytics dashboard",
-      "Designed GraphQL APIs handling 10M+ requests daily",
-      "Optimized database queries reducing response time by 40%",
     ],
   },
 ];
@@ -66,73 +64,76 @@ const Experience = () => {
 
       {/* Large Background Text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-        <span className="text-[20vw] font-display font-bold text-foreground/[0.03] tracking-widest select-none">
+        <span className="text-[18vw] md:text-[15vw] font-display font-bold text-foreground/[0.03] tracking-widest select-none">
           EXPERIENCE
         </span>
       </div>
 
-      <main className="relative z-10 min-h-screen px-6 pt-24 pb-12">
+      <main className="relative z-10 min-h-screen px-4 md:px-6 pt-24 pb-12">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="w-full max-w-2xl mx-auto space-y-6"
+          className="w-full max-w-md mx-auto space-y-8"
         >
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="premium-card glow-effect p-6 md:p-8"
+              className="rounded-2xl overflow-hidden bg-card/80 backdrop-blur-md border border-primary/30 shadow-[0_0_30px_-5px_hsl(var(--primary)/0.3)]"
             >
-              {/* Company & Role */}
-              <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground">
-                {exp.company}
-              </h2>
-              <p className="text-lg text-foreground/90 mt-1">{exp.role}</p>
-              
-              {/* Duration & Location */}
-              <p className="text-muted-foreground mt-2">{exp.duration}</p>
-              <p className="text-muted-foreground/70 italic text-sm">
-                {exp.location} · {exp.mode}
-              </p>
+              <div className="p-5 md:p-6">
+                {/* Company */}
+                <h2 className="text-xl md:text-2xl font-display font-bold text-foreground">
+                  {exp.company}
+                </h2>
+                
+                {/* Role */}
+                <p className="text-base md:text-lg text-foreground/90 mt-1">{exp.role}</p>
+                
+                {/* Duration */}
+                <p className="text-muted-foreground mt-2 text-sm">{exp.duration}</p>
+                
+                {/* Location & Mode */}
+                <p className="text-muted-foreground/70 italic text-sm">
+                  {exp.location} · {exp.mode}
+                </p>
 
-              {/* Type Badge */}
-              <Badge 
-                variant="outline" 
-                className="mt-4 border-primary/50 text-primary bg-primary/10 text-xs tracking-wider"
-              >
-                {exp.type}
-              </Badge>
+                {/* Type Badge */}
+                <span className="inline-block mt-4 px-4 py-1.5 text-xs tracking-widest font-medium border border-primary/50 text-primary bg-primary/10 rounded-md">
+                  {exp.type}
+                </span>
 
-              {/* Tech Tags */}
-              <div className="flex flex-wrap gap-2 mt-5">
-                {exp.tags.map((tag, i) => (
-                  <span 
-                    key={i} 
-                    className="px-3 py-1.5 text-sm border border-border/50 rounded-full text-foreground/80 bg-card/30"
-                  >
-                    {tag}
-                  </span>
-                ))}
+                {/* Tech Tags */}
+                <div className="flex flex-wrap gap-2 mt-5">
+                  {exp.tags.map((tag, i) => (
+                    <span 
+                      key={i} 
+                      className="px-3 py-1.5 text-sm border border-border/60 rounded-full text-foreground/80 bg-background/30 hover:border-primary/50 transition-colors"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
 
-              {/* Divider */}
-              <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent my-6" />
+              {/* Bottom Section - Outside card visually but connected */}
+              <div className="px-5 md:px-6 pb-5 md:pb-6 space-y-4">
+                {/* Expertise */}
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                  {exp.expertise}
+                </p>
 
-              {/* Expertise */}
-              <p className="text-muted-foreground leading-relaxed">
-                {exp.expertise}
-              </p>
-
-              {/* Bullet Points */}
-              <ul className="mt-4 space-y-2">
-                {exp.bullets.map((bullet, i) => (
-                  <li key={i} className="flex items-start gap-3 text-muted-foreground">
-                    <span className="text-primary mt-1.5">▸</span>
-                    <span>{bullet}</span>
-                  </li>
-                ))}
-              </ul>
+                {/* Bullet Points */}
+                <ul className="space-y-2 border-l-2 border-primary/30 pl-4">
+                  {exp.bullets.map((bullet, i) => (
+                    <li key={i} className="flex items-start gap-2 text-muted-foreground text-sm">
+                      <span className="text-primary mt-0.5">▸</span>
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </motion.div>
           ))}
         </motion.div>
