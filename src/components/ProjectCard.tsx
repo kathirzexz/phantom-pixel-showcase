@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ArrowUpRight, Github } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
@@ -10,6 +10,15 @@ interface ProjectCardProps {
   image?: string;
   index: number;
 }
+
+// Random project images from picsum with different seeds
+const getRandomProjectImage = (index: number) => {
+  const seeds = [
+    'tech', 'code', 'dashboard', 'app', 'design', 
+    'data', 'analytics', 'security', 'ai', 'web'
+  ];
+  return `https://picsum.photos/seed/${seeds[index % seeds.length]}/600/400`;
+};
 
 const ProjectCard = ({
   title,
@@ -26,76 +35,69 @@ const ProjectCard = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="project-card group"
+      whileHover={{ y: -4 }}
+      className="group rounded-2xl overflow-hidden bg-card border border-border shadow-[var(--shadow-card)] transition-all duration-500 hover:shadow-lg"
     >
-      {/* Image placeholder */}
-      <div className="relative h-48 overflow-hidden bg-secondary/50">
-        {image ? (
+      {/* Image Container */}
+      <div className="relative h-52 overflow-hidden bg-[#0F0F0F] p-3">
+        <div className="w-full h-full rounded-xl overflow-hidden">
           <img
-            src={image}
+            src={image || getRandomProjectImage(index)}
             alt={title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center">
-            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-              <span className="text-2xl font-display font-bold text-primary">
-                {title.charAt(0)}
-              </span>
-            </div>
-          </div>
-        )}
-        
-        {/* Overlay on hover */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        </div>
       </div>
 
       {/* Content */}
       <div className="p-6 space-y-4">
-        <h3 className="text-xl font-display font-medium text-foreground group-hover:text-primary transition-colors duration-300">
+        <h3 className="text-xl font-display font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
           {title}
         </h3>
         
-        <p className="text-muted-foreground text-sm leading-relaxed">
+        <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2">
           {description}
         </p>
 
-        {/* Tech Stack */}
+        {/* Tech Stack Pills */}
         <div className="flex flex-wrap gap-2">
           {techStack.map((tech) => (
             <span
               key={tech}
-              className="px-2.5 py-1 text-xs font-medium bg-secondary text-secondary-foreground rounded-md"
+              className="px-3 py-1.5 text-xs font-medium bg-secondary text-secondary-foreground border border-border rounded-full"
             >
               {tech}
             </span>
           ))}
         </div>
 
-        {/* Links */}
-        <div className="flex items-center gap-4 pt-2">
-          {githubUrl && (
-            <motion.a
-              href={githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
-              whileHover={{ x: 2 }}
-            >
-              <Github className="w-4 h-4" />
-              <span>Code</span>
-            </motion.a>
-          )}
+        {/* Footer with Links */}
+        <div className="flex items-center justify-between pt-2">
+          <div className="flex items-center gap-3">
+            {githubUrl && (
+              <motion.a
+                href={githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+                whileHover={{ x: 2 }}
+              >
+                <Github className="w-4 h-4" />
+                <span>Code</span>
+              </motion.a>
+            )}
+          </div>
+          
           {liveUrl && (
             <motion.a
               href={liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
-              whileHover={{ x: 2 }}
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground shadow-md hover:shadow-lg transition-all duration-300"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <ExternalLink className="w-4 h-4" />
-              <span>Live Demo</span>
+              <ArrowUpRight className="w-5 h-5" />
             </motion.a>
           )}
         </div>
