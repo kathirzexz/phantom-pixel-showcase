@@ -31,19 +31,8 @@ const Navigation = ({ showBack = false }: NavigationProps) => {
           )}
         </div>
 
-        {/* Center - Can be used for logo */}
-        <div className="flex-1 flex justify-center">
-          {isHome && (
-            <motion.span 
-              className="text-sm font-medium tracking-widest uppercase text-muted-foreground"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-            >
-              Portfolio
-            </motion.span>
-          )}
-        </div>
+        {/* Center - Empty spacer */}
+        <div className="flex-1" />
 
         {/* Right Side Actions */}
         <div className="flex-1 flex items-center justify-end gap-3">
