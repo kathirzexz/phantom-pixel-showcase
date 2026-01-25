@@ -127,7 +127,7 @@ const Index = () => {
                       whileTap={{ scale: 0.98 }}
                     >
                       <Award className="w-4 h-4" />
-                      <span>Feats</span>
+                      <span>Feat</span>
                       <ArrowRight className="w-4 h-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     </motion.button>
                   </Link>
