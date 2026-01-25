@@ -6,42 +6,42 @@ import ProjectCard from "@/components/ProjectCard";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A modern, full-featured e-commerce platform with real-time inventory management, secure payments, and an intuitive admin dashboard.",
-    techStack: ["React", "Node.js", "PostgreSQL", "Stripe", "AWS"],
+    title: "Password Security App",
+    description: "A secure password manager with encryption, breach detection, and password strength analysis for maximum security.",
+    techStack: ["React", "Node.js", "MongoDB", "Crypto", "JWT"],
+    githubUrl: "https://github.com",
+    liveUrl: "https://example.com",
+  },
+  {
+    title: "Realtime Monitoring Dashboard",
+    description: "Live system monitoring dashboard with real-time metrics, alerts, and performance analytics visualization.",
+    techStack: ["Next.js", "WebSocket", "PostgreSQL", "Chart.js", "Redis"],
     githubUrl: "https://github.com",
     liveUrl: "https://example.com",
   },
   {
     title: "AI Content Generator",
-    description: "An intelligent content generation tool powered by machine learning that helps creators produce high-quality content efficiently.",
-    techStack: ["Next.js", "Python", "OpenAI", "MongoDB", "Vercel"],
+    description: "An intelligent content generation tool powered by machine learning that helps creators produce high-quality content.",
+    techStack: ["Python", "OpenAI", "FastAPI", "React", "Vercel"],
     githubUrl: "https://github.com",
     liveUrl: "https://example.com",
   },
   {
-    title: "Project Management App",
-    description: "A collaborative project management application with real-time updates, task tracking, and team communication features.",
-    techStack: ["React", "Firebase", "TypeScript", "Tailwind"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-  },
-  {
-    title: "Financial Dashboard",
-    description: "A comprehensive financial analytics dashboard with data visualization, budget tracking, and investment portfolio management.",
-    techStack: ["Vue.js", "D3.js", "Node.js", "GraphQL"],
+    title: "Analytics System",
+    description: "Comprehensive analytics platform for tracking user behavior, engagement metrics, and conversion funnels.",
+    techStack: ["Vue.js", "D3.js", "Node.js", "GraphQL", "AWS"],
     githubUrl: "https://github.com",
   },
   {
-    title: "Social Media Analytics",
-    description: "A powerful analytics platform for tracking social media metrics, engagement rates, and audience growth across multiple platforms.",
-    techStack: ["React", "Python", "PostgreSQL", "Chart.js"],
+    title: "E-Commerce Platform",
+    description: "A modern, full-featured e-commerce platform with real-time inventory management and secure payments.",
+    techStack: ["React", "Stripe", "PostgreSQL", "Tailwind", "AWS"],
     githubUrl: "https://github.com",
     liveUrl: "https://example.com",
   },
   {
     title: "Mobile Fitness App",
-    description: "A cross-platform fitness application with workout tracking, nutrition planning, and progress visualization features.",
+    description: "Cross-platform fitness application with workout tracking, nutrition planning, and progress visualization.",
     techStack: ["React Native", "Node.js", "MongoDB", "Redux"],
     githubUrl: "https://github.com",
   },
@@ -56,7 +56,9 @@ const Projects = () => {
 
       {/* Background Text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <span className="bg-text text-foreground">WORK</span>
+        <span className="text-[12vw] md:text-[15vw] font-display font-bold tracking-tighter text-foreground/[0.03] select-none">
+          PROJECTS
+        </span>
       </div>
 
       <main className="relative z-10 min-h-screen px-6 py-24">
