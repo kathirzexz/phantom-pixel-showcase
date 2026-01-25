@@ -41,18 +41,18 @@ const Experience = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5 },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
@@ -64,35 +64,46 @@ const Experience = () => {
 
       {/* Large Background Text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-        <span className="text-[18vw] md:text-[15vw] font-display font-bold text-foreground/[0.03] tracking-widest select-none">
+        <span className="text-[15vw] md:text-[12vw] font-display font-bold text-foreground/[0.04] tracking-widest select-none uppercase">
           EXPERIENCE
         </span>
       </div>
 
-      <main className="relative z-10 min-h-screen px-4 md:px-6 pt-24 pb-12">
+      <main className="relative z-10 min-h-screen px-4 md:px-6 pt-28 pb-16">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="w-full max-w-md mx-auto space-y-8"
+          className="w-full max-w-lg mx-auto space-y-8"
         >
           {experiences.map((exp, index) => (
-            <motion.div
+            <motion.article
               key={index}
               variants={itemVariants}
-              className="rounded-2xl overflow-hidden bg-card/80 backdrop-blur-md border border-primary/30 shadow-[0_0_30px_-5px_hsl(var(--primary)/0.3)]"
+              whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+              className="group relative rounded-3xl overflow-hidden bg-card/60 backdrop-blur-xl border border-primary/20 
+                         shadow-[0_0_40px_-10px_hsl(var(--primary)/0.25)] 
+                         hover:shadow-[0_0_60px_-10px_hsl(var(--primary)/0.4)] 
+                         hover:border-primary/40 transition-all duration-500"
             >
-              <div className="p-5 md:p-6">
+              {/* Subtle gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <div className="relative p-6 md:p-8">
                 {/* Company */}
-                <h2 className="text-xl md:text-2xl font-display font-bold text-foreground">
+                <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground tracking-tight">
                   {exp.company}
                 </h2>
                 
                 {/* Role */}
-                <p className="text-base md:text-lg text-foreground/90 mt-1">{exp.role}</p>
+                <p className="text-lg md:text-xl text-foreground/90 font-medium mt-2">
+                  {exp.role}
+                </p>
                 
                 {/* Duration */}
-                <p className="text-muted-foreground mt-2 text-sm">{exp.duration}</p>
+                <p className="text-muted-foreground mt-3 text-sm md:text-base">
+                  {exp.duration}
+                </p>
                 
                 {/* Location & Mode */}
                 <p className="text-muted-foreground/70 italic text-sm">
@@ -100,16 +111,20 @@ const Experience = () => {
                 </p>
 
                 {/* Type Badge */}
-                <span className="inline-block mt-4 px-4 py-1.5 text-xs tracking-widest font-medium border border-primary/50 text-primary bg-primary/10 rounded-md">
+                <span className="inline-block mt-5 px-5 py-2 text-xs tracking-[0.2em] font-semibold 
+                               border border-primary/40 text-primary bg-primary/10 rounded-lg
+                               shadow-[0_0_20px_-5px_hsl(var(--primary)/0.3)]">
                   {exp.type}
                 </span>
 
                 {/* Tech Tags */}
-                <div className="flex flex-wrap gap-2 mt-5">
+                <div className="flex flex-wrap gap-2.5 mt-6">
                   {exp.tags.map((tag, i) => (
                     <span 
                       key={i} 
-                      className="px-3 py-1.5 text-sm border border-border/60 rounded-full text-foreground/80 bg-background/30 hover:border-primary/50 transition-colors"
+                      className="px-4 py-2 text-sm font-medium border border-border/50 rounded-full 
+                                 text-foreground/80 bg-background/40 backdrop-blur-sm
+                                 hover:border-primary/50 hover:bg-primary/10 transition-all duration-300"
                     >
                       {tag}
                     </span>
@@ -117,24 +132,27 @@ const Experience = () => {
                 </div>
               </div>
 
-              {/* Bottom Section - Outside card visually but connected */}
-              <div className="px-5 md:px-6 pb-5 md:pb-6 space-y-4">
+              {/* Bottom Section - Expertise & Bullets */}
+              <div className="relative px-6 md:px-8 pb-6 md:pb-8 space-y-5">
+                {/* Divider */}
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+                
                 {/* Expertise */}
-                <p className="text-muted-foreground leading-relaxed text-sm">
+                <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
                   {exp.expertise}
                 </p>
 
                 {/* Bullet Points */}
-                <ul className="space-y-2 border-l-2 border-primary/30 pl-4">
+                <ul className="space-y-3 border-l-2 border-primary/30 pl-5">
                   {exp.bullets.map((bullet, i) => (
-                    <li key={i} className="flex items-start gap-2 text-muted-foreground text-sm">
-                      <span className="text-primary mt-0.5">▸</span>
-                      <span>{bullet}</span>
+                    <li key={i} className="flex items-start gap-3 text-muted-foreground text-sm md:text-base">
+                      <span className="text-primary font-bold mt-0.5">▸</span>
+                      <span className="leading-relaxed">{bullet}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </motion.div>
       </main>
