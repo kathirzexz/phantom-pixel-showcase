@@ -46,7 +46,7 @@ const Navigation = ({ showBack = false }: NavigationProps) => {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            Resume
+            Download CV
           </motion.a>
           
           <Link to="/contact">
@@ -56,7 +56,7 @@ const Navigation = ({ showBack = false }: NavigationProps) => {
               whileTap={{ scale: 0.98 }}
             >
               <Mail className="w-4 h-4" />
-              <span>Say Hi</span>
+              <span>Let's Talk</span>
             </motion.button>
           </Link>
         </div>
