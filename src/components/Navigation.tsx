@@ -36,8 +36,6 @@ const Navigation = ({ showBack = false }: NavigationProps) => {
 
         {/* Right Side Actions */}
         <div className="flex-1 flex items-center justify-end gap-2.5 sm:gap-3">
-          <ThemeToggle />
-          
           <motion.a
             href={resumeLink}
             target="_blank"
@@ -61,6 +59,8 @@ const Navigation = ({ showBack = false }: NavigationProps) => {
               <span>Let's Talk</span>
             </motion.button>
           </Link>
+          
+          <ThemeToggle />
         </div>
       </nav>
     </motion.header>
