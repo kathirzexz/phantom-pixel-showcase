@@ -10,8 +10,9 @@ const ThemeToggle = () => {
     <motion.button
       onClick={toggleTheme}
       className="theme-toggle-container"
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
+      whileHover={{ scale: 1.03, y: -1 }}
+      whileTap={{ scale: 0.97 }}
+      transition={{ type: "spring", stiffness: 400, damping: 25 }}
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
     >
       {/* Background Track */}

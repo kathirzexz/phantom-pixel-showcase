@@ -35,25 +35,27 @@ const Navigation = ({ showBack = false }: NavigationProps) => {
         <div className="flex-1" />
 
         {/* Right Side Actions */}
-        <div className="flex-1 flex items-center justify-end gap-3">
+        <div className="flex-1 flex items-center justify-end gap-2.5 sm:gap-3">
           <ThemeToggle />
           
           <motion.a
             href={resumeLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="nav-button hidden sm:flex items-center cursor-pointer"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+            className="nav-button hidden sm:flex items-center justify-center cursor-pointer"
+            whileHover={{ scale: 1.03, y: -1 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ type: "spring", stiffness: 400, damping: 25 }}
           >
             Download CV
           </motion.a>
           
           <Link to="/contact">
             <motion.button
-              className="nav-button-primary flex items-center gap-2"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+              className="nav-button-primary flex items-center justify-center gap-2"
+              whileHover={{ scale: 1.03, y: -1 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: "spring", stiffness: 400, damping: 25 }}
             >
               <Mail className="w-4 h-4" />
               <span>Let's Talk</span>
