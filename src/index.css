@@ -76,70 +76,70 @@
     --sidebar-ring: 187 100% 50%;
   }
 
-  /* Light theme (Beach Style) */
+  /* Light theme (Beach Style - Enhanced Contrast) */
   .theme-light {
-    /* Beach sand background: #F5F1DC */
-    --background: 47 52% 91%;
-    --foreground: 0 0% 12%;
+    /* Softer, warmer background with more definition */
+    --background: 45 35% 92%;
+    --foreground: 0 0% 8%;
     
-    /* Card background: #EFE8C8 */
-    --card: 47 48% 86%;
-    --card-foreground: 0 0% 12%;
+    /* Card background: deeper contrast with warm undertone */
+    --card: 42 30% 96%;
+    --card-foreground: 0 0% 8%;
     
-    --popover: 47 48% 86%;
-    --popover-foreground: 0 0% 12%;
+    --popover: 42 30% 96%;
+    --popover-foreground: 0 0% 8%;
     
     /* Purple Gradient Accent: #8E63F6 → #5B3DB4 → #1A1A1A */
-    --primary: 261 90% 68%;
+    --primary: 261 85% 58%;
     --primary-foreground: 0 0% 100%;
     
-    /* Tech pill background: #F3EED3 */
-    --secondary: 50 50% 89%;
-    --secondary-foreground: 0 0% 12%;
+    /* Tech pill background: slightly darker for contrast */
+    --secondary: 45 25% 88%;
+    --secondary-foreground: 0 0% 15%;
     
-    --muted: 47 40% 85%;
-    --muted-foreground: 0 0% 42%;
+    --muted: 40 20% 82%;
+    --muted-foreground: 0 0% 35%;
     
-    --accent: 261 55% 47%;
+    --accent: 261 60% 45%;
     --accent-foreground: 0 0% 100%;
     
-    /* Tech pill border: #D8D0A8 */
-    --border: 48 35% 75%;
-    --input: 48 35% 75%;
-    --ring: 261 90% 68%;
+    /* Stronger borders for definition */
+    --border: 40 25% 70%;
+    --input: 40 25% 70%;
+    --ring: 261 85% 58%;
     
-    --surface-dark: 47 52% 91%;
-    --surface-elevated: 47 48% 86%;
-    --text-primary: 0 0% 12%;
-    --text-secondary: 0 0% 42%;
+    --surface-dark: 40 20% 88%;
+    --surface-elevated: 42 30% 96%;
+    --text-primary: 0 0% 8%;
+    --text-secondary: 0 0% 35%;
     
     /* Gradient Colors */
-    --gradient-start: 261 90% 68%;
-    --gradient-mid1: 261 55% 47%;
+    --gradient-start: 261 85% 58%;
+    --gradient-mid1: 261 60% 45%;
     --gradient-end: 0 0% 10%;
     
-    /* Light mode gradients */
-    --gradient-dark: linear-gradient(180deg, hsl(47 52% 91%) 0%, hsl(47 45% 88%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(47 48% 86%) 0%, hsl(47 45% 84%) 100%);
+    /* Light mode gradients with better depth */
+    --gradient-dark: linear-gradient(180deg, hsl(45 35% 92%) 0%, hsl(40 25% 88%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(42 30% 96%) 0%, hsl(40 25% 92%) 100%);
     --gradient-accent: linear-gradient(135deg, #8E63F6 0%, #5B3DB4 60%, #1A1A1A 100%);
-    --gradient-glow: radial-gradient(ellipse at center, hsl(261 90% 68% / 0.1) 0%, transparent 70%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(261 85% 58% / 0.12) 0%, transparent 70%);
     
-    /* Beach-style shadows: rgba(120,110,70,0.25) */
-    --shadow-sm: 0 2px 8px hsla(47, 27%, 37%, 0.15);
-    --shadow-md: 0 4px 16px hsla(47, 27%, 37%, 0.2);
-    --shadow-lg: 0 8px 32px hsla(47, 27%, 37%, 0.25);
-    --shadow-glow: 0 0 40px hsl(261 90% 68% / 0.2);
-    --shadow-card: 0 4px 20px hsla(47, 27%, 37%, 0.25);
+    /* Enhanced shadows for depth and definition */
+    --shadow-sm: 0 2px 8px hsla(0, 0%, 0%, 0.08);
+    --shadow-md: 0 4px 16px hsla(0, 0%, 0%, 0.1);
+    --shadow-lg: 0 8px 32px hsla(0, 0%, 0%, 0.12);
+    --shadow-glow: 0 0 40px hsl(261 85% 58% / 0.15);
+    --shadow-card: 0 2px 12px hsla(0, 0%, 0%, 0.08), 0 8px 24px hsla(0, 0%, 0%, 0.06);
     
     /* Light sidebar */
-    --sidebar-background: 47 48% 86%;
-    --sidebar-foreground: 0 0% 12%;
-    --sidebar-primary: 261 90% 68%;
+    --sidebar-background: 42 30% 96%;
+    --sidebar-foreground: 0 0% 8%;
+    --sidebar-primary: 261 85% 58%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 50 50% 89%;
-    --sidebar-accent-foreground: 0 0% 12%;
-    --sidebar-border: 48 35% 75%;
-    --sidebar-ring: 261 90% 68%;
+    --sidebar-accent: 45 25% 88%;
+    --sidebar-accent-foreground: 0 0% 15%;
+    --sidebar-border: 40 25% 70%;
+    --sidebar-ring: 261 85% 58%;
   }
 }
 
