@@ -3,7 +3,7 @@ import Navigation from "@/components/Navigation";
 import SocialSidebar from "@/components/SocialSidebar";
 import ParticlesBackground from "@/components/ParticlesBackground";
 import ContactForm from "@/components/ContactForm";
-import { Mail, Clock } from "lucide-react";
+import { Mail, Clock, Phone, MessageCircle } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -69,6 +69,38 @@ const Contact = () => {
                         className="text-foreground hover:text-primary transition-colors"
                       >
                         kathirzexz@gmail.com
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Phone className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Mobile</p>
+                      <a 
+                        href="tel:+916385133205" 
+                        className="text-foreground hover:text-primary transition-colors"
+                      >
+                        +91 6385133205
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <MessageCircle className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">WhatsApp</p>
+                      <a 
+                        href="https://wa.me/916385133205" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-foreground hover:text-primary transition-colors"
+                      >
+                        +91 6385133205
                       </a>
                     </div>
                   </div>
