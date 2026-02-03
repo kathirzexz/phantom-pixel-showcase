@@ -167,6 +167,18 @@ const Index = () => {
           </motion.div>
 
         </motion.div>
+
+        {/* Footer */}
+        <motion.footer
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.6 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        >
+          <p className="text-muted-foreground text-sm">
+            © 2026 • Kathirzexz
+          </p>
+        </motion.footer>
       </main>
     </div>
   );
