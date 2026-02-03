@@ -175,8 +175,8 @@ const Index = () => {
           transition={{ delay: 1, duration: 0.6 }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
         >
-          <p className="text-muted-foreground text-sm">
-            © 2026 • Kathirzexz
+          <p className="text-muted-foreground text-sm group cursor-default">
+            © 2026 • <span className="transition-colors duration-300 hover:text-primary">Kathirzexz</span>
           </p>
         </motion.footer>
       </main>
