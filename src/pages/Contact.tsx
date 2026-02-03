@@ -73,35 +73,29 @@ const Contact = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <Phone className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <p className="text-sm text-muted-foreground">Mobile</p>
-                      <a 
-                        href="tel:+916385133205" 
-                        className="text-foreground hover:text-primary transition-colors"
-                      >
-                        +91 6385133205
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <MessageCircle className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground">WhatsApp</p>
-                      <a 
-                        href="https://wa.me/916385133205" 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-foreground hover:text-primary transition-colors"
-                      >
-                        +91 6385133205
-                      </a>
+                      <p className="text-sm text-muted-foreground">Mobile & WhatsApp</p>
+                      <div className="flex items-center gap-3">
+                        <a 
+                          href="tel:+916385133205" 
+                          className="text-foreground hover:text-primary transition-colors"
+                        >
+                          +91 6385133205
+                        </a>
+                        <a 
+                          href="https://wa.me/916385133205" 
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"
+                          title="Chat on WhatsApp"
+                        >
+                          <MessageCircle className="w-3.5 h-3.5 text-primary" />
+                        </a>
+                      </div>
                     </div>
                   </div>
 
