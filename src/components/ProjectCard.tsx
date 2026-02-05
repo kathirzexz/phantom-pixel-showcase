@@ -39,8 +39,8 @@ const ProjectCard = ({
       className="group rounded-2xl overflow-hidden bg-card border border-border shadow-[var(--shadow-card)] transition-all duration-500 hover:shadow-lg"
     >
       {/* Image Container */}
-      <div className="relative h-52 overflow-hidden bg-[#0F0F0F] p-3">
-        <div className="w-full h-full rounded-xl overflow-hidden">
+      <div className="relative h-40 sm:h-52 overflow-hidden bg-[#0F0F0F] p-2 sm:p-3">
+        <div className="w-full h-full rounded-lg sm:rounded-xl overflow-hidden">
           <img
             src={image || getRandomProjectImage(index)}
             alt={title}
@@ -50,21 +50,21 @@ const ProjectCard = ({
       </div>
 
       {/* Content */}
-      <div className="p-6 space-y-4">
-        <h3 className="text-xl font-display font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+      <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
+        <h3 className="text-lg sm:text-xl font-display font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
           {title}
         </h3>
         
-        <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2">
+        <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed line-clamp-2">
           {description}
         </p>
 
         {/* Tech Stack Pills */}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2">
           {techStack.map((tech) => (
             <span
               key={tech}
-              className="px-3 py-1.5 text-xs font-medium bg-secondary text-secondary-foreground border border-border rounded-full"
+              className="px-2 sm:px-3 py-1 sm:py-1.5 text-[10px] sm:text-xs font-medium bg-secondary text-secondary-foreground border border-border rounded-full"
             >
               {tech}
             </span>
@@ -72,17 +72,17 @@ const ProjectCard = ({
         </div>
 
         {/* Footer with Links */}
-        <div className="flex items-center justify-between pt-2">
+        <div className="flex items-center justify-between pt-1 sm:pt-2">
           <div className="flex items-center gap-3">
             {githubUrl && (
               <motion.a
                 href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="flex items-center gap-1.5 text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors"
                 whileHover={{ x: 2 }}
               >
-                <Github className="w-4 h-4" />
+                <Github className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 <span>Code</span>
               </motion.a>
             )}
@@ -93,11 +93,11 @@ const ProjectCard = ({
               href={liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground shadow-md hover:shadow-lg transition-all duration-300"
+              className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-primary text-primary-foreground shadow-md hover:shadow-lg transition-all duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <ArrowUpRight className="w-5 h-5" />
+              <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </motion.a>
           )}
         </div>

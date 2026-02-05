@@ -56,24 +56,24 @@ const Projects = () => {
 
       {/* Background Text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <span className="text-[12vw] md:text-[15vw] font-display font-bold tracking-tighter text-foreground/[0.03] select-none">
+        <span className="text-[15vw] sm:text-[12vw] md:text-[15vw] font-display font-bold tracking-tighter text-foreground/[0.03] select-none">
           PROJECTS
         </span>
       </div>
 
-      <main className="relative z-10 min-h-screen px-6 py-24">
+      <main className="relative z-10 min-h-screen px-4 sm:px-6 py-20 sm:py-24">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-4xl md:text-5xl font-display font-light text-foreground mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl font-display font-light text-foreground mb-3 sm:mb-4"
             >
               My <span className="text-gradient font-medium">Projects</span>
             </motion.h1>
@@ -81,14 +81,14 @@ const Projects = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-muted-foreground text-lg max-w-2xl mx-auto"
+              className="text-muted-foreground text-sm sm:text-lg max-w-2xl mx-auto px-2"
             >
               A selection of projects I've worked on, showcasing my skills in 
               full-stack development and problem-solving.
             </motion.p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {projects.map((project, index) => (
               <ProjectCard
                 key={project.title}

@@ -15,7 +15,7 @@ const About = () => {
         <span className="bg-text text-foreground">ABOUT</span>
       </div>
 
-      <main className="relative z-10 min-h-screen flex items-center justify-center px-6 py-24">
+      <main className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 py-20 sm:py-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -23,7 +23,7 @@ const About = () => {
           className="w-full max-w-3xl"
         >
           <motion.div
-            className="premium-card p-8 md:p-12"
+            className="premium-card p-5 sm:p-8 md:p-12"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -32,12 +32,12 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-3xl md:text-4xl font-display font-light text-foreground mb-8"
+              className="text-2xl sm:text-3xl md:text-4xl font-display font-light text-foreground mb-6 sm:mb-8"
             >
               About <span className="text-gradient font-medium">Me</span>
             </motion.h1>
 
-            <div className="space-y-6 text-muted-foreground leading-relaxed">
+            <div className="space-y-4 sm:space-y-6 text-muted-foreground text-sm sm:text-base leading-relaxed">
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -82,26 +82,26 @@ const About = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.9 }}
-                className="pt-6 border-t border-border"
+                className="pt-4 sm:pt-6 border-t border-border"
               >
-                <h2 className="text-lg font-display font-medium text-foreground mb-4">
+                <h2 className="text-base sm:text-lg font-display font-medium text-foreground mb-3 sm:mb-4">
                   Quick Facts
                 </h2>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 text-xs sm:text-sm">
                   <li className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-primary" />
+                    <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
                     <span>ECE Undergraduate</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-primary" />
+                    <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
                     <span>Embedded Systems & IoT</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-primary" />
+                    <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
                     <span>AI & Automation Enthusiast</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-primary" />
+                    <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
                     <span>Based in India</span>
                   </li>
                 </ul>
