@@ -7,34 +7,34 @@ import SkillCard from "@/components/SkillCard";
 
 const skillCategories = [
   {
-    title: "Frontend Development",
-    icon: Layout,
-    skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Framer Motion", "HTML5", "CSS3"],
-  },
-  {
-    title: "Backend Development",
-    icon: Database,
-    skills: ["Node.js", "Express", "PostgreSQL", "MongoDB", "GraphQL", "REST APIs"],
-  },
-  {
-    title: "Software Engineering",
+    title: "Languages",
     icon: Code,
-    skills: ["JavaScript", "Python", "Git", "Testing", "CI/CD", "Agile", "System Design"],
+    skills: ["C", "Embedded C", "Python", "HTML", "CSS"],
   },
   {
-    title: "Cloud & DevOps",
+    title: "Programming & AI",
+    icon: Database,
+    skills: ["Python", "LLMs", "AI & Machine Learning", "Embedded Systems Programming"],
+  },
+  {
+    title: "Deployment & Version Control",
     icon: Cloud,
-    skills: ["AWS", "Docker", "Kubernetes", "Vercel", "Firebase", "GitHub Actions"],
+    skills: ["Git", "GitHub", "REST APIs", "Cloud Deployment"],
   },
   {
-    title: "Mobile Development",
-    icon: Smartphone,
-    skills: ["React Native", "Flutter", "iOS", "Android", "Responsive Design"],
-  },
-  {
-    title: "Tools & Workflow",
+    title: "Tools & Platforms",
     icon: Wrench,
-    skills: ["VS Code", "Figma", "Postman", "Jira", "Notion", "Terminal", "Webpack"],
+    skills: ["Wokwi", "Blynk", "ThingSpeak", "Firebase", "MATLAB", "LTspice"],
+  },
+  {
+    title: "Hardware Platforms",
+    icon: Smartphone,
+    skills: ["Arduino", "ESP32", "Raspberry Pi"],
+  },
+  {
+    title: "Frameworks & Libraries",
+    icon: Layout,
+    skills: ["TensorFlow"],
   },
 ];
 
