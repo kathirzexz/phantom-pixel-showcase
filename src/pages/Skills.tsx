@@ -50,19 +50,19 @@ const Skills = () => {
         <span className="bg-text text-foreground">SKILLS</span>
       </div>
 
-      <main className="relative z-10 min-h-screen px-6 py-24">
+      <main className="relative z-10 min-h-screen px-4 sm:px-6 py-20 sm:py-24">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-4xl md:text-5xl font-display font-light text-foreground mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl font-display font-light text-foreground mb-3 sm:mb-4"
             >
               My <span className="text-gradient font-medium">Skills</span>
             </motion.h1>
@@ -70,14 +70,14 @@ const Skills = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-muted-foreground text-lg max-w-2xl mx-auto"
+              className="text-muted-foreground text-sm sm:text-lg max-w-2xl mx-auto px-2"
             >
               A comprehensive toolkit built over years of crafting digital experiences.
               Always learning, always growing.
             </motion.p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {skillCategories.map((category, index) => (
               <SkillCard
                 key={category.title}

@@ -64,24 +64,24 @@ const Experience = () => {
 
       {/* Large Background Text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-        <span className="text-[15vw] md:text-[12vw] font-display font-bold text-foreground/[0.04] tracking-widest select-none uppercase">
+        <span className="text-[18vw] sm:text-[15vw] md:text-[12vw] font-display font-bold text-foreground/[0.04] tracking-widest select-none uppercase">
           EXPERIENCE
         </span>
       </div>
 
-      <main className="relative z-10 min-h-screen px-4 md:px-6 pt-28 pb-16">
+      <main className="relative z-10 min-h-screen px-3 sm:px-4 md:px-6 pt-24 sm:pt-28 pb-12 sm:pb-16">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="w-full max-w-lg mx-auto space-y-8"
+          className="w-full max-w-lg mx-auto space-y-6 sm:space-y-8"
         >
           {experiences.map((exp, index) => (
             <motion.article
               key={index}
               variants={itemVariants}
               whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-              className="group relative rounded-3xl overflow-hidden bg-card/60 backdrop-blur-xl border border-primary/20 
+              className="group relative rounded-2xl sm:rounded-3xl overflow-hidden bg-card/60 backdrop-blur-xl border border-primary/20 
                          shadow-[0_0_40px_-10px_hsl(var(--primary)/0.25)] 
                          hover:shadow-[0_0_60px_-10px_hsl(var(--primary)/0.4)] 
                          hover:border-primary/40 transition-all duration-500"
@@ -89,40 +89,40 @@ const Experience = () => {
               {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
-              <div className="relative p-6 md:p-8">
+              <div className="relative p-4 sm:p-6 md:p-8">
                 {/* Company */}
-                <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground tracking-tight">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-foreground tracking-tight">
                   {exp.company}
                 </h2>
                 
                 {/* Role */}
-                <p className="text-lg md:text-xl text-foreground/90 font-medium mt-2">
+                <p className="text-base sm:text-lg md:text-xl text-foreground/90 font-medium mt-1.5 sm:mt-2">
                   {exp.role}
                 </p>
                 
                 {/* Duration */}
-                <p className="text-muted-foreground mt-3 text-sm md:text-base">
+                <p className="text-muted-foreground mt-2 sm:mt-3 text-xs sm:text-sm md:text-base">
                   {exp.duration}
                 </p>
                 
                 {/* Location & Mode */}
-                <p className="text-muted-foreground/70 italic text-sm">
+                <p className="text-muted-foreground/70 italic text-xs sm:text-sm">
                   {exp.location} · {exp.mode}
                 </p>
 
                 {/* Type Badge */}
-                <span className="inline-block mt-5 px-5 py-2 text-xs tracking-[0.2em] font-semibold 
+                <span className="inline-block mt-4 sm:mt-5 px-3 sm:px-5 py-1.5 sm:py-2 text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] font-semibold 
                                border border-primary/40 text-primary bg-primary/10 rounded-lg
                                shadow-[0_0_20px_-5px_hsl(var(--primary)/0.3)]">
                   {exp.type}
                 </span>
 
                 {/* Tech Tags */}
-                <div className="flex flex-wrap gap-2.5 mt-6">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2.5 mt-4 sm:mt-6">
                   {exp.tags.map((tag, i) => (
                     <span 
                       key={i} 
-                      className="px-4 py-2 text-sm font-medium border border-border/50 rounded-full 
+                      className="px-2.5 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium border border-border/50 rounded-full 
                                  text-foreground/80 bg-background/40 backdrop-blur-sm
                                  hover:border-primary/50 hover:bg-primary/10 transition-all duration-300"
                     >
@@ -133,20 +133,20 @@ const Experience = () => {
               </div>
 
               {/* Bottom Section - Expertise & Bullets */}
-              <div className="relative px-6 md:px-8 pb-6 md:pb-8 space-y-5">
+              <div className="relative px-4 sm:px-6 md:px-8 pb-4 sm:pb-6 md:pb-8 space-y-4 sm:space-y-5">
                 {/* Divider */}
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
                 
                 {/* Expertise */}
-                <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
+                <p className="text-muted-foreground leading-relaxed text-xs sm:text-sm md:text-base">
                   {exp.expertise}
                 </p>
 
                 {/* Bullet Points */}
-                <ul className="space-y-3 border-l-2 border-primary/30 pl-5">
+                <ul className="space-y-2 sm:space-y-3 border-l-2 border-primary/30 pl-3 sm:pl-5">
                   {exp.bullets.map((bullet, i) => (
-                    <li key={i} className="flex items-start gap-3 text-muted-foreground text-sm md:text-base">
-                      <span className="text-primary font-bold mt-0.5">▸</span>
+                    <li key={i} className="flex items-start gap-2 sm:gap-3 text-muted-foreground text-xs sm:text-sm md:text-base">
+                      <span className="text-primary font-bold mt-0.5 flex-shrink-0">▸</span>
                       <span className="leading-relaxed">{bullet}</span>
                     </li>
                   ))}
