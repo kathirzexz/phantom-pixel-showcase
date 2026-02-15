@@ -6,45 +6,35 @@ import ProjectCard from "@/components/ProjectCard";
 
 const projects = [
   {
-    title: "Password Security App",
-    description: "A secure password manager with encryption, breach detection, and password strength analysis for maximum security.",
-    techStack: ["React", "Node.js", "MongoDB", "Crypto", "JWT"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    title: "Obstacle-Avoiding-Robot-And-bluetooth-Voice-Controller",
+    description: "Obstacle-avoiding, Bluetooth, and voice-controlled robots demonstrate autonomous movement, wireless control, and hands-free operation in robotics.",
+    techStack: ["Arduino", "C/C++", "Ultrasonic Sensor", "Bluetooth", "Voice Recognition"],
+    githubUrl: "https://github.com/kathirzexz/Obstacle-Avoiding-Robot-And-bluetooth-Voice-Controller",
+   // liveUrl: "https://example.com",
+
+   image:"/projects/robot.jpg"
   },
   {
-    title: "Realtime Monitoring Dashboard",
-    description: "Live system monitoring dashboard with real-time metrics, alerts, and performance analytics visualization.",
-    techStack: ["Next.js", "WebSocket", "PostgreSQL", "Chart.js", "Redis"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    title: "ESP32-Air-Mouse",
+    description: "Turns your ESP32 into a wireless BLE air mouse using the MPU6050 motion sensor—board movement controls cursor motion, and buttons perform click actions.",
+    techStack: ["ESP32", "MPU6050", "BLE", "Arduino IDE", "C/C++"],
+    githubUrl: "https://github.com/kathirzexz/ESP32-Air-Mouse",
+   // liveUrl: "https://example.com",
   },
   {
-    title: "AI Content Generator",
-    description: "An intelligent content generation tool powered by machine learning that helps creators produce high-quality content.",
-    techStack: ["Python", "OpenAI", "FastAPI", "React", "Vercel"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    title: "Radar-System-With-Arduino",
+    description: "An Arduino radar system uses an Arduino board, ultrasonic sensor, and servo motor to detect objects. The sensor scans an area by rotating, measures distance using sound waves, and displays object position, simulating basic radar operation.",
+    techStack: ["Arduino", "Ultrasonic Sensor", "Servo Motor", "C/C++", "Processing"],
+    githubUrl: "https://github.com/kathirzexz/Radar-System-With-Arduino-?tab=readme-ov-file#radar-system-with-arduino-",
+   // liveUrl: "https://example.com",
   },
   {
-    title: "Analytics System",
-    description: "Comprehensive analytics platform for tracking user behavior, engagement metrics, and conversion funnels.",
-    techStack: ["Vue.js", "D3.js", "Node.js", "GraphQL", "AWS"],
-    githubUrl: "https://github.com",
+    title: "Clap-Switch",
+    description: "A clap switch can control not only lamps but also home appliances like fans and lights by detecting clap sounds and switching AC loads (110–240V) safely using a relay.",
+    techStack: ["Arduino", "Sound Sensor (Microphone)", "Relay Module", "C/C++", "AC Power (110–240V)"],
+    githubUrl: "https://github.com/kathirzexz/Clap-Switch",
   },
-  {
-    title: "E-Commerce Platform",
-    description: "A modern, full-featured e-commerce platform with real-time inventory management and secure payments.",
-    techStack: ["React", "Stripe", "PostgreSQL", "Tailwind", "AWS"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-  },
-  {
-    title: "Mobile Fitness App",
-    description: "Cross-platform fitness application with workout tracking, nutrition planning, and progress visualization.",
-    techStack: ["React Native", "Node.js", "MongoDB", "Redux"],
-    githubUrl: "https://github.com",
-  },
+  
 ];
 
 const Projects = () => {
