@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
@@ -11,8 +11,10 @@ const ContactForm = () => {
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
+  const formRef = useRef<HTMLFormElement | null>(null);
+
   useEffect(() => {
-    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    emailjs.init("49gkCrU3dfJJIBPwT");
   }, []);
 
   const handleChange = (
@@ -28,9 +30,10 @@ const ContactForm = () => {
     e.preventDefault();
     setStatus("loading");
 
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    // Hardcoded for debugging — replace with env vars after testing
+    const serviceId = "service_t3frqse";
+    const templateId = "template_t6ff9nr";
+    const publicKey = "49gkCrU3dfJJIBPwT";
 
     if (!serviceId || !templateId || !publicKey) {
       console.error("EmailJS env vars missing", { serviceId, templateId, publicKey });
@@ -47,12 +50,20 @@ const ContactForm = () => {
       from_name: formData.name,
       from_email: formData.email,
       to_email: "kathirzexz@gmail.com",
+      // formatted body you can reference as {{email_body}} in your EmailJS template
+      email_body: `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
     };
     console.log("EmailJS templateParams:", templateParams);
 
     try {
-      const res = await emailjs.send(serviceId, templateId, templateParams, publicKey);
-      console.log("EmailJS send response:", res);
+      // prefer sendForm which posts the actual form fields (useful when template expects names)
+      if (formRef.current) {
+        const res = await emailjs.sendForm(serviceId, templateId, formRef.current as HTMLFormElement, publicKey as string);
+        console.log("EmailJS sendForm response:", res);
+      } else {
+        const res = await emailjs.send(serviceId, templateId, templateParams, publicKey);
+        console.log("EmailJS send response:", res);
+      }
       setStatus("success");
       setFormData({ name: "", email: "", message: "" });
       setTimeout(() => setStatus("idle"), 5000);
@@ -66,6 +77,7 @@ const ContactForm = () => {
 
   return (
     <motion.form
+      ref={formRef}
       onSubmit={handleSubmit}
       className="space-y-6"
       initial={{ opacity: 0 }}
