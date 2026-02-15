@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
@@ -10,6 +10,10 @@ const ContactForm = () => {
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  useEffect(() => {
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -25,16 +29,16 @@ const ContactForm = () => {
     setStatus("loading");
 
     try {
-      // Note: You'll need to configure EmailJS with your own service ID, template ID, and public key
       await emailjs.send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
+          to_email: "kathirzexz@gmail.com",
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
         },
-        "YOUR_PUBLIC_KEY"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
       setStatus("success");
       setFormData({ name: "", email: "", message: "" });
