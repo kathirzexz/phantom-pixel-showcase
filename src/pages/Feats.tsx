@@ -1,49 +1,41 @@
 import { motion } from "framer-motion";
-import { Award, Trophy, GraduationCap, Star, Zap } from "lucide-react";
+import { Award, Trophy, GraduationCap, Star, Zap, Wrench, Medal } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import SocialSidebar from "@/components/SocialSidebar";
 import ParticlesBackground from "@/components/ParticlesBackground";
 
 const feats = [
   {
-    title: "Amazon ML Summer School",
-    subtitle: "Mentee - Machine Learning Program",
-    tags: ["#ML", "#MachineLearning", "#DataScience", "#DeepLearning"],
-    description: "4-week intensive apprenticeship program focused on advanced machine learning concepts and real-world applications.",
-    icon: GraduationCap,
-    category: "CERTIFICATION",
-  },
-  {
-    title: "Zoho Summer Internship",
-    subtitle: "Software Development Intern",
-    tags: ["#SQL", "#JDBC", "#Java", "#Kafka"],
-    description: "Hands-on experience building enterprise-grade applications with industry-standard technologies.",
-    icon: Award,
-    category: "INTERNSHIP",
-  },
-  {
-    title: "National Hackathon Winner",
-    subtitle: "1st Place - CodeStorm 2023",
-    tags: ["#React", "#Node.js", "#Innovation", "#Teamwork"],
-    description: "Led a team of 4 to build an AI-powered solution that won among 500+ participants nationwide.",
+    title: "Naan Mudhalvan Hackathon Winner",
+    subtitle: " Won 3rd Prize - 2025",
+    tags: ["#NaanMudhalvan", "#Naan Mudhalvan Hackathon", "#HackathonWinner", "#ThirdPrize" , "#TeamWork"],
+    description: "Won 3rd Prize in the Naan Mudhalvan Hackathon for innovative project work.",
     icon: Trophy,
     category: "ACHIEVEMENT",
   },
   {
-    title: "AWS Cloud Practitioner",
-    subtitle: "Certified Cloud Professional",
-    tags: ["#AWS", "#Cloud", "#DevOps", "#Infrastructure"],
-    description: "Demonstrated expertise in cloud concepts, security, technology, and billing/pricing models.",
-    icon: Star,
-    category: "CERTIFICATION",
+    title: "EMGLITZ Technologies Summer Internship",
+    subtitle: "Working Experience On Core Projects",
+    tags: ["#EMGLITZTechnologies", "#CoreProjects", "#HandsOnExperience", "#IndustryExperience"],
+    description: "Hands-on experience working on core projects at EMGLITZ Technologies, enhancing practical engineering skills.",
+    icon: Wrench,
+    category: "INTERNSHIP & TRAINING",
   },
   {
-    title: "Open Source Contributor",
-    subtitle: "React & TypeScript Libraries",
-    tags: ["#OpenSource", "#GitHub", "#Community", "#Code"],
-    description: "Active contributor to major open-source projects with 50+ merged pull requests.",
-    icon: Zap,
-    category: "CONTRIBUTION",
+    title: "TECHVOLT Software Summer Internship",
+    subtitle: "Training Experience On Embedded Systems",
+    tags: ["#TechvoltSoftware", "#SummerInternship", "#IndustryExperience"],
+    description: "Completed summer internship training at Techvolt Software with hands-on project experience.",
+    icon: GraduationCap,
+    category: "ACHIEVEMENT",
+  },
+  {
+    title: "Selvam College Of Technology Certificate Of Appreciation ",
+    subtitle: "Won 1st Prize In Connection Contest",
+    tags: ["#SelvamCollegeOfTechnology", "#FirstPrize", "#CertificateOfAppreciation","#Achievement"],
+    description: "Secured First Prize and received a Certificate of Appreciation in a college-level contest at Selvam College of Technology.",
+    icon: Medal,
+    category: "ACHIEVEMENT",
   },
 ];
 
