@@ -5,35 +5,122 @@ import ParticlesBackground from "@/components/ParticlesBackground";
 
 const experiences = [
   {
-    company: "Zoho Corporation",
-    role: "Project Trainee",
-    duration: "Jul 2022 - Jun 2023",
-    location: "Chennai, Tamil Nadu, India",
+    company: "Naan Mudhalvan Hackathon 2025",
+    role: "Embedded System Innovator – Raspberry Pi Project",
+    duration: "2025",
+    location: "Tamil Nadu, India",
     mode: "On-site",
-    type: "INTERNSHIP",
-    tags: ["GraphQL", "Java", "Spring Boot", "MySQL", "Redis", "JavaScript", "REST APIs"],
-    expertise: "GraphQL Expert, Service Orientated Architecture, ORM, Serverless, Cloud Infrastructure.",
+    type: "HACKATHON",
+    tags: ["Raspberry Pi", "Embedded Systems", "Prototyping", "Innovation"],
+    expertise:
+      "Developed an innovative embedded system prototype using Raspberry Pi and secured 3rd prize in a state-level hackathon.",
     bullets: [
-      "Developed GraphQL APIs and REST services",
-      "Worked with Redis, MySQL, Java, JavaScript, Handlebars, Highcharts",
+      "Designed and developed a functional embedded system prototype",
+      "Integrated sensors and hardware modules using Raspberry Pi",
+      "Demonstrated real-time working model to judges",
+      "Won 3rd Prize for innovation and technical implementation",
     ],
   },
   {
-    company: "Nexus Technologies",
-    role: "Senior Software Engineer",
-    duration: "Jan 2023 – Present",
-    location: "San Francisco, CA",
-    mode: "Remote",
-    type: "FULL-TIME",
-    tags: ["React", "TypeScript", "Node.js", "PostgreSQL", "AWS", "Docker"],
-    expertise: "Frontend Architecture, System Design, Team Leadership, Agile Development.",
+    company: "Techvolt Software Pvt. Ltd.",
+    role: "Embedded Systems & IoT Trainee",
+    duration: "Dec 2025 – Jan 2026",
+    location: "Coimbatore, India",
+    mode: "On-site",
+    type: "INTERNSHIP",
+    tags: ["Embedded Systems", "IoT", "Microcontrollers", "Sensors", "Automation"],
+    expertise:
+      "Hands-on training in embedded system design and IoT-based automation using real hardware components.",
     bullets: [
-      "Led frontend architecture for enterprise SaaS platform serving 50K+ daily active users",
-      "Mentored junior developers and conducted code reviews for 8-member team",
-      "Implemented CI/CD pipelines reducing deployment time by 60%",
+      "Built and tested embedded prototypes using microcontrollers",
+      "Worked with sensors and IoT modules for automation projects",
+      "Gained practical exposure to real-time hardware implementation",
     ],
   },
+  {
+    company: "Techvolt Software Pvt. Ltd.",
+    role: "Embedded Systems Intern",
+    duration: "14 Jul 2025 – 20 Jul 2025",
+    location: "Coimbatore, India",
+    mode: "On-site",
+    type: "INTERNSHIP",
+    tags: ["Embedded Systems", "IoT", "Microcontrollers", "Industry 4.0"],
+    expertise:
+      "Completed an intensive internship focused on embedded systems development and Industry 4.0 technologies.",
+    bullets: [
+      "Worked with embedded system fundamentals and microcontroller programming",
+      "Learned sensor interfacing and basic IoT system integration",
+      "Understood real-time applications of embedded systems in Industry 4.0",
+      "Participated in hands-on technical training and project-based learning",
+    ],
+  },
+  {
+    company: "EMGLITZ Technologies",
+    role: "Technical Project Intern",
+    duration: "May 2024",
+    location: "India",
+    mode: "On-site",
+    type: "INTERNSHIP",
+    tags: ["Core Engineering Projects", "Firmware", "Hardware Interfacing", "System Development"],
+    expertise:
+      "Worked on company core engineering projects involving firmware development and hardware interfacing.",
+    bullets: [
+      "Contributed to real-time core engineering projects",
+      "Assisted in firmware development and debugging",
+      "Performed hardware interfacing with embedded modules",
+      "Supported system testing and performance optimization",
+    ],
+  },
+  {
+    company: "IRRD Automations",
+    role: "Intern – ASIC Design for AI using SPICE",
+    duration: "01 Feb 2025 – 10 Feb 2025",
+    location: "Karur / Coimbatore, India",
+    mode: "On-site",
+    type: "INTERNSHIP",
+    tags: ["ASIC Design", "SPICE Simulation", "Artificial Intelligence Hardware"],
+    expertise:
+      "Gained exposure to ASIC design concepts and circuit simulation techniques for AI hardware applications.",
+    bullets: [
+      "Learned fundamentals of ASIC design workflow",
+      "Worked with SPICE tools for circuit simulation",
+      "Understood hardware-level implementation for AI systems",
+    ],
+  },
+  {
+    company: "CodeBind Technologies",
+    role: "Workshop Participant – Web Development",
+    duration: "02 Feb 2026",
+    location: "Trichy, India",
+    mode: "On-site",
+    type: "WORKSHOP",
+    tags: ["Web Development", "HTML", "CSS", "Frontend Basics"],
+    expertise:
+      "Participated in a hands-on web development workshop focusing on modern frontend fundamentals.",
+    bullets: [
+      "Learned core concepts of website structure and design",
+      "Built basic responsive web pages",
+      "Understood real-world web development workflow",
+    ],
+  },
+  {
+    company: "PGP College of Engineering and Technology",
+    role: "Quiz Organizer – ElectroSwaggers 2025",
+    duration: "2025",
+    location: "Namakkal, India",
+    mode: "On-site",
+    type: "LEADERSHIP",
+    tags: ["Event Management", "Technical Quiz", "Student Leadership"],
+    expertise:
+      "Organized and coordinated a technical quiz event as part of the department student association activities.",
+    bullets: [
+      "Managed quiz event planning and execution",
+      "Coordinated with participants and faculty",
+      "Developed communication and leadership skills",
+    ],
+  }
 ];
+
 
 const Experience = () => {
   const containerVariants = {
