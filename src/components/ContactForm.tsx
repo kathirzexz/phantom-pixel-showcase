@@ -28,21 +28,37 @@ const ContactForm = () => {
     e.preventDefault();
     setStatus("loading");
 
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error("EmailJS env vars missing", { serviceId, templateId, publicKey });
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
+      return;
+    }
+
+    const templateParams = {
+      // include both naming conventions used by common EmailJS templates
+      ...formData,
+      name: formData.name,
+      email: formData.email,
+      from_name: formData.name,
+      from_email: formData.email,
+      to_email: "kathirzexz@gmail.com",
+    };
+    console.log("EmailJS templateParams:", templateParams);
+
     try {
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          ...formData,
-          to_email: "kathirzexz@gmail.com",
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
+      const res = await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      console.log("EmailJS send response:", res);
       setStatus("success");
       setFormData({ name: "", email: "", message: "" });
       setTimeout(() => setStatus("idle"), 5000);
-    } catch (error) {
-      console.error("Email error:", error);
+    } catch (error: any) {
+      console.error("EmailJS send failed:", error);
+      if (error && error.status) console.error("status:", error.status, "text:", error.text || error.message);
       setStatus("error");
       setTimeout(() => setStatus("idle"), 5000);
     }
